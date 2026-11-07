@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <link rel="apple-touch-icon" href="G3 png.png" sizes="180x180">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>G3 Depo</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="G3 Depo">
+    <script>
+/*! JsBarcode v3.11.5 | (c) Johan Lindell | MIT license */
+!function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=15)}([function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});e.default=function t(e,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.data=e,this.text=n.text||e,this.options=n}},function(t,e,n){"use strict";var r;function o(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}Object.defineProperty(e,"__esModule",{value:!0});var i=e.SET_A=0,a=e.SET_B=1,u=e.SET_C=2,f=(e.SHIFT=98,e.START_A=103),c=e.START_B=104,s=e.START_C=105;e.MODULO=103,e.STOP=106,e.FNC1=207,e.SET_BY_CODE=(o(r={},f,i),o(r,c,a),o(r,s,u),r),e.SWAP={101:i,100:a,99:u},e.A_START_CHAR=String.fromCharCode(208),e.B_START_CHAR=String.fromCharCode(209),e.C_START_CHAR=String.fromCharCode(210),e.A_CHARS="[\0-_È-Ï]",e.B_CHARS="[ -È-Ï]",e.C_CHARS="(Ï*[0-9]{2}Ï*)",e.BARS=[11011001100,11001101100,11001100110,10010011e3,10010001100,10001001100,10011001e3,10011000100,10001100100,11001001e3,11001000100,11000100100,10110011100,10011011100,10011001110,10111001100,10011101100,10011100110,11001110010,11001011100,11001001110,11011100100,11001110100,11101101110,11101001100,11100101100,11100100110,11101100100,11100110100,11100110010,11011011e3,11011000110,11000110110,10100011e3,10001011e3,10001000110,10110001e3,10001101e3,10001100010,11010001e3,11000101e3,11000100010,10110111e3,10110001110,10001101110,10111011e3,10111000110,10001110110,11101110110,11010001110,11000101110,11011101e3,11011100010,11011101110,11101011e3,11101000110,11100010110,11101101e3,11101100010,11100011010,11101111010,11001000010,11110001010,1010011e4,10100001100,1001011e4,10010000110,10000101100,10000100110,1011001e4,10110000100,1001101e4,10011000010,10000110100,10000110010,11000010010,1100101e4,11110111010,11000010100,10001111010,10100111100,10010111100,10010011110,10111100100,10011110100,10011110010,11110100100,11110010100,11110010010,11011011110,11011110110,11110110110,10101111e3,10100011110,10001011110,10111101e3,10111100010,11110101e3,11110100010,10111011110,10111101110,11101011110,11110101110,11010000100,1101001e4,11010011100,1100011101011]},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});e.SIDE_BIN="101",e.MIDDLE_BIN="01010",e.BINARIES={L:["0001101","0011001","0010011","0111101","0100011","0110001","0101111","0111011","0110111","0001011"],G:["0100111","0110011","0011011","0100001","0011101","0111001","0000101","0010001","0001001","0010111"],R:["1110010","1100110","1101100","1000010","1011100","1001110","1010000","1000100","1001000","1110100"],O:["0001101","0011001","0010011","0111101","0100011","0110001","0101111","0111011","0110111","0001011"],E:["0100111","0110011","0011011","0100001","0011101","0111001","0000101","0010001","0001001","0010111"]},e.EAN2_STRUCTURE=["LL","LG","GL","GG"],e.EAN5_STRUCTURE=["GGLLL","GLGLL","GLLGL","GLLLG","LGGLL","LLGGL","LLLGG","LGLGL","LGLLG","LLGLG"],e.EAN13_STRUCTURE=["LLLLLL","LLGLGG","LLGGLG","LLGGGL","LGLLGG","LGGLLG","LGGGLL","LGLGLG","LGLGGL","LGGLGL"]},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(2);e.default=function(t,e,n){var o=t.split("").map((function(t,n){return r.BINARIES[e[n]]})).map((function(e,n){return e?e[t[n]]:""}));if(n){var i=t.length-1;o=o.map((function(t,e){return e<i?t+n:t}))}return o.join("")}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(0);var a=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"encode",value:function(){for(var t="110",e=0;e<this.data.length;e++){var n=parseInt(this.data[e]).toString(2);n=u(n,4-n.length);for(var r=0;r<n.length;r++)t+="0"==n[r]?"100":"110"}return{data:t+="1001",text:this.text}}},{key:"valid",value:function(){return-1!==this.data.search(/^[0-9]+$/)}}]),e}(((r=i)&&r.__esModule?r:{default:r}).default);function u(t,e){for(var n=0;n<e;n++)t="0"+t;return t}e.default=a},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(0),a=(r=i)&&r.__esModule?r:{default:r},u=n(1);var f=function(t){function e(t,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e);var r=function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t.substring(1),n));return r.bytes=t.split("").map((function(t){return t.charCodeAt(0)})),r}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return/^[\x00-\x7F\xC8-\xD3]+$/.test(this.data)}},{key:"encode",value:function(){var t=this.bytes,n=t.shift()-105,r=u.SET_BY_CODE[n];if(void 0===r)throw new RangeError("The encoding does not start with a start character.");!0===this.shouldEncodeAsEan128()&&t.unshift(u.FNC1);var o=e.next(t,1,r);return{text:this.text===this.data?this.text.replace(/[^\x20-\x7E]/g,""):this.text,data:e.getBar(n)+o.result+e.getBar((o.checksum+n)%u.MODULO)+e.getBar(u.STOP)}}},{key:"shouldEncodeAsEan128",value:function(){var t=this.options.ean128||!1;return"string"==typeof t&&(t="true"===t.toLowerCase()),t}}],[{key:"getBar",value:function(t){return u.BARS[t]?u.BARS[t].toString():""}},{key:"correctIndex",value:function(t,e){if(e===u.SET_A){var n=t.shift();return n<32?n+64:n-32}return e===u.SET_B?t.shift()-32:10*(t.shift()-48)+t.shift()-48}},{key:"next",value:function(t,n,r){if(!t.length)return{result:"",checksum:0};var o=void 0,i=void 0;if(t[0]>=200){i=t.shift()-105;var a=u.SWAP[i];void 0!==a?o=e.next(t,n+1,a):(r!==u.SET_A&&r!==u.SET_B||i!==u.SHIFT||(t[0]=r===u.SET_A?t[0]>95?t[0]-96:t[0]:t[0]<32?t[0]+96:t[0]),o=e.next(t,n+1,r))}else i=e.correctIndex(t,r),o=e.next(t,n+1,r);var f=i*n;return{result:e.getBar(i)+o.result,checksum:f+o.checksum}}}]),e}(a.default);e.default=f},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.mod10=function(t){for(var e=0,n=0;n<t.length;n++){var r=parseInt(t[n]);(n+t.length)%2==0?e+=r:e+=2*r%10+Math.floor(2*r/10)}return(10-e%10)%10},e.mod11=function(t){for(var e=0,n=[2,3,4,5,6,7],r=0;r<t.length;r++){var o=parseInt(t[t.length-1-r]);e+=n[r%n.length]*o}return(11-e%11)%11}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r])}return t};e.default=function(t,e){return r({},t,e)}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),o=n(2),i=a(n(3));function a(t){return t&&t.__esModule?t:{default:t}}var u=function(t){function e(t,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e);var r=function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n));return r.fontSize=!n.flat&&n.fontSize>10*n.width?10*n.width:n.fontSize,r.guardHeight=n.height+r.fontSize/2+n.textMargin,r}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),r(e,[{key:"encode",value:function(){return this.options.flat?this.encodeFlat():this.encodeGuarded()}},{key:"leftText",value:function(t,e){return this.text.substr(t,e)}},{key:"leftEncode",value:function(t,e){return(0,i.default)(t,e)}},{key:"rightText",value:function(t,e){return this.text.substr(t,e)}},{key:"rightEncode",value:function(t,e){return(0,i.default)(t,e)}},{key:"encodeGuarded",value:function(){var t={fontSize:this.fontSize},e={height:this.guardHeight};return[{data:o.SIDE_BIN,options:e},{data:this.leftEncode(),text:this.leftText(),options:t},{data:o.MIDDLE_BIN,options:e},{data:this.rightEncode(),text:this.rightText(),options:t},{data:o.SIDE_BIN,options:e}]}},{key:"encodeFlat",value:function(){return{data:[o.SIDE_BIN,this.leftEncode(),o.MIDDLE_BIN,this.rightEncode(),o.SIDE_BIN].join(""),text:this.text}}}]),e}(a(n(0)).default);e.default=u},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}();e.checksum=u;var o=i(n(3));function i(t){return t&&t.__esModule?t:{default:t}}var a=function(t){function e(t,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),-1!==t.search(/^[0-9]{11}$/)&&(t+=u(t));var r=function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n));return r.displayValue=n.displayValue,n.fontSize>10*n.width?r.fontSize=10*n.width:r.fontSize=n.fontSize,r.guardHeight=n.height+r.fontSize/2+n.textMargin,r}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),r(e,[{key:"valid",value:function(){return-1!==this.data.search(/^[0-9]{12}$/)&&this.data[11]==u(this.data)}},{key:"encode",value:function(){return this.options.flat?this.flatEncoding():this.guardedEncoding()}},{key:"flatEncoding",value:function(){var t="";return t+="101",t+=(0,o.default)(this.data.substr(0,6),"LLLLLL"),t+="01010",t+=(0,o.default)(this.data.substr(6,6),"RRRRRR"),{data:t+="101",text:this.text}}},{key:"guardedEncoding",value:function(){var t=[];return this.displayValue&&t.push({data:"00000000",text:this.text.substr(0,1),options:{textAlign:"left",fontSize:this.fontSize}}),t.push({data:"101"+(0,o.default)(this.data[0],"L"),options:{height:this.guardHeight}}),t.push({data:(0,o.default)(this.data.substr(1,5),"LLLLL"),text:this.text.substr(1,5),options:{fontSize:this.fontSize}}),t.push({data:"01010",options:{height:this.guardHeight}}),t.push({data:(0,o.default)(this.data.substr(6,5),"RRRRR"),text:this.text.substr(6,5),options:{fontSize:this.fontSize}}),t.push({data:(0,o.default)(this.data[11],"R")+"101",options:{height:this.guardHeight}}),this.displayValue&&t.push({data:"00000000",text:this.text.substr(11,1),options:{textAlign:"right",fontSize:this.fontSize}}),t}}]),e}(i(n(0)).default);function u(t){var e,n=0;for(e=1;e<11;e+=2)n+=parseInt(t[e]);for(e=0;e<11;e+=2)n+=3*parseInt(t[e]);return(10-n%10)%10}e.default=a},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(31),a=n(0);function u(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function f(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}var c=function(t){function e(){return u(this,e),f(this,(e.__proto__||Object.getPrototypeOf(e)).apply(this,arguments))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return-1!==this.data.search(/^([0-9]{2})+$/)}},{key:"encode",value:function(){var t=this,e=this.data.match(/.{2}/g).map((function(e){return t.encodePair(e)})).join("");return{data:i.START_BIN+e+i.END_BIN,text:this.text}}},{key:"encodePair",value:function(t){var e=i.BINARIES[t[1]];return i.BINARIES[t[0]].split("").map((function(t,n){return("1"===t?"111":"1")+("1"===e[n]?"000":"0")})).join("")}}]),e}(((r=a)&&r.__esModule?r:{default:r}).default);e.default=c},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(t){var e=["width","height","textMargin","fontSize","margin","marginTop","marginBottom","marginLeft","marginRight"];for(var n in e)e.hasOwnProperty(n)&&(n=e[n],"string"==typeof t[n]&&(t[n]=parseInt(t[n],10)));"string"==typeof t.displayValue&&(t.displayValue="false"!=t.displayValue);return t}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r={width:2,height:100,format:"auto",displayValue:!0,fontOptions:"",font:"monospace",text:void 0,textAlign:"center",textPosition:"bottom",textMargin:2,fontSize:20,background:"#ffffff",lineColor:"#000000",margin:10,marginTop:void 0,marginBottom:void 0,marginLeft:void 0,marginRight:void 0,valid:function(){}};e.default=r},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.getTotalWidthOfEncodings=e.calculateEncodingAttributes=e.getBarcodePadding=e.getEncodingHeight=e.getMaximumHeightOfEncodings=void 0;var r,o=n(7),i=(r=o)&&r.__esModule?r:{default:r};function a(t,e){return e.height+(e.displayValue&&t.text.length>0?e.fontSize+e.textMargin:0)+e.marginTop+e.marginBottom}function u(t,e,n){if(n.displayValue&&e<t){if("center"==n.textAlign)return Math.floor((t-e)/2);if("left"==n.textAlign)return 0;if("right"==n.textAlign)return Math.floor(t-e)}return 0}function f(t,e,n){var r;if(n)r=n;else{if("undefined"==typeof document)return 0;r=document.createElement("canvas").getContext("2d")}r.font=e.fontOptions+" "+e.fontSize+"px "+e.font;var o=r.measureText(t);return o?o.width:0}e.getMaximumHeightOfEncodings=function(t){for(var e=0,n=0;n<t.length;n++)t[n].height>e&&(e=t[n].height);return e},e.getEncodingHeight=a,e.getBarcodePadding=u,e.calculateEncodingAttributes=function(t,e,n){for(var r=0;r<t.length;r++){var o,c=t[r],s=(0,i.default)(e,c.options);o=s.displayValue?f(c.text,s,n):0;var l=c.data.length*s.width;c.width=Math.ceil(Math.max(o,l)),c.height=a(c,s),c.barcodePadding=u(o,l,s)}},e.getTotalWidthOfEncodings=function(t){for(var e=0,n=0;n<t.length;n++)e+=t[n].width;return e}},function(t,e,n){"use strict";function r(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function o(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function i(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}Object.defineProperty(e,"__esModule",{value:!0});var a=function(t){function e(t,n){r(this,e);var i=o(this,(e.__proto__||Object.getPrototypeOf(e)).call(this));return i.name="InvalidInputException",i.symbology=t,i.input=n,i.message='"'+i.input+'" is not a valid input for '+i.symbology,i}return i(e,Error),e}(),u=function(t){function e(){r(this,e);var t=o(this,(e.__proto__||Object.getPrototypeOf(e)).call(this));return t.name="InvalidElementException",t.message="Not supported type to render on",t}return i(e,Error),e}(),f=function(t){function e(){r(this,e);var t=o(this,(e.__proto__||Object.getPrototypeOf(e)).call(this));return t.name="NoElementException",t.message="No element to render on.",t}return i(e,Error),e}();e.InvalidInputException=a,e.InvalidElementException=u,e.NoElementException=f},function(t,e,n){"use strict";var r=p(n(16)),o=p(n(7)),i=p(n(41)),a=p(n(42)),u=p(n(43)),f=p(n(11)),c=p(n(49)),s=n(14),l=p(n(12));function p(t){return t&&t.__esModule?t:{default:t}}var d=function(){},h=function(t,e,n){var r=new d;if(void 0===t)throw Error("No element to render on was provided.");return r._renderProperties=(0,u.default)(t),r._encodings=[],r._options=l.default,r._errorHandler=new c.default(r),void 0!==e&&((n=n||{}).format||(n.format=_()),r.options(n)[n.format](e,n).render()),r};for(var y in h.getModule=function(t){return r.default[t]},r.default)r.default.hasOwnProperty(y)&&b(r.default,y);function b(t,e){d.prototype[e]=d.prototype[e.toUpperCase()]=d.prototype[e.toLowerCase()]=function(n,r){var i=this;return i._errorHandler.wrapBarcodeCall((function(){r.text=void 0===r.text?void 0:""+r.text;var a=(0,o.default)(i._options,r);a=(0,f.default)(a);var u=t[e],c=v(n,u,a);return i._encodings.push(c),i}))}}function v(t,e,n){var r=new e(t=""+t,n);if(!r.valid())throw new s.InvalidInputException(r.constructor.name,t);var a=r.encode();a=(0,i.default)(a);for(var u=0;u<a.length;u++)a[u].options=(0,o.default)(n,a[u].options);return a}function _(){return r.default.CODE128?"CODE128":Object.keys(r.default)[0]}function g(t,e,n){e=(0,i.default)(e);for(var r=0;r<e.length;r++)e[r].options=(0,o.default)(n,e[r].options),(0,a.default)(e[r].options);(0,a.default)(n),new(0,t.renderer)(t.element,e,n).render(),t.afterRender&&t.afterRender()}d.prototype.options=function(t){return this._options=(0,o.default)(this._options,t),this},d.prototype.blank=function(t){var e=new Array(t+1).join("0");return this._encodings.push({data:e}),this},d.prototype.init=function(){var t;if(this._renderProperties)for(var e in Array.isArray(this._renderProperties)||(this._renderProperties=[this._renderProperties]),this._renderProperties){t=this._renderProperties[e];var n=(0,o.default)(this._options,t.options);"auto"==n.format&&(n.format=_()),this._errorHandler.wrapBarcodeCall((function(){var e=v(n.value,r.default[n.format.toUpperCase()],n);g(t,e,n)}))}},d.prototype.render=function(){if(!this._renderProperties)throw new s.NoElementException;if(Array.isArray(this._renderProperties))for(var t=0;t<this._renderProperties.length;t++)g(this._renderProperties[t],this._encodings,this._options);else g(this._renderProperties,this._encodings,this._options);return this},d.prototype._defaults=l.default,"undefined"!=typeof window&&(window.JsBarcode=h),"undefined"!=typeof jQuery&&(jQuery.fn.JsBarcode=function(t,e){var n=[];return jQuery(this).each((function(){n.push(this)})),h(n,t,e)}),t.exports=h},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(17),o=n(18),i=n(24),a=n(30),u=n(33),f=n(38),c=n(39),s=n(40);e.default={CODE39:r.CODE39,CODE128:o.CODE128,CODE128A:o.CODE128A,CODE128B:o.CODE128B,CODE128C:o.CODE128C,EAN13:i.EAN13,EAN8:i.EAN8,EAN5:i.EAN5,EAN2:i.EAN2,UPC:i.UPC,UPCE:i.UPCE,ITF14:a.ITF14,ITF:a.ITF,MSI:u.MSI,MSI10:u.MSI10,MSI11:u.MSI11,MSI1010:u.MSI1010,MSI1110:u.MSI1110,pharmacode:f.pharmacode,codabar:c.codabar,GenericBarcode:s.GenericBarcode}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.CODE39=void 0;var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(0);var a=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),t=t.toUpperCase(),n.mod43&&(t+=function(t){return u[t]}(function(t){for(var e=0,n=0;n<t.length;n++)e+=s(t[n]);return e%=43}(t))),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"encode",value:function(){for(var t=c("*"),e=0;e<this.data.length;e++)t+=c(this.data[e])+"0";return{data:t+=c("*"),text:this.text}}},{key:"valid",value:function(){return-1!==this.data.search(/^[0-9A-Z\-\.\ \$\/\+\%]+$/)}}]),e}(((r=i)&&r.__esModule?r:{default:r}).default),u=["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","-","."," ","$","/","+","%","*"],f=[20957,29783,23639,30485,20951,29813,23669,20855,29789,23645,29975,23831,30533,22295,30149,24005,21623,29981,23837,22301,30023,23879,30545,22343,30161,24017,21959,30065,23921,22385,29015,18263,29141,17879,29045,18293,17783,29021,18269,17477,17489,17681,20753,35770];function c(t){return function(t){return f[t].toString(2)}(s(t))}function s(t){return u.indexOf(t)}e.CODE39=a},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.CODE128C=e.CODE128B=e.CODE128A=e.CODE128=void 0;var r=u(n(19)),o=u(n(21)),i=u(n(22)),a=u(n(23));function u(t){return t&&t.__esModule?t:{default:t}}e.CODE128=r.default,e.CODE128A=o.default,e.CODE128B=i.default,e.CODE128C=a.default},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=i(n(5)),o=i(n(20));function i(t){return t&&t.__esModule?t:{default:t}}function a(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}var u=function(t){function e(t,n){if(function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),/^[\x00-\x7F\xC8-\xD3]+$/.test(t))var r=a(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,(0,o.default)(t),n));else r=a(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n));return a(r)}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),e}(r.default);e.default=u},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(1),o=function(t){return t.match(new RegExp("^"+r.A_CHARS+"*"))[0].length},i=function(t){return t.match(new RegExp("^"+r.B_CHARS+"*"))[0].length},a=function(t){return t.match(new RegExp("^"+r.C_CHARS+"*"))[0]};function u(t,e){var n=e?r.A_CHARS:r.B_CHARS,o=t.match(new RegExp("^("+n+"+?)(([0-9]{2}){2,})([^0-9]|$)"));if(o)return o[1]+String.fromCharCode(204)+f(t.substring(o[1].length));var i=t.match(new RegExp("^"+n+"+"))[0];return i.length===t.length?t:i+String.fromCharCode(e?205:206)+u(t.substring(i.length),!e)}function f(t){var e=a(t),n=e.length;if(n===t.length)return t;t=t.substring(n);var r=o(t)>=i(t);return e+String.fromCharCode(r?206:205)+u(t,r)}e.default=function(t){var e=void 0;if(a(t).length>=2)e=r.C_START_CHAR+f(t);else{var n=o(t)>i(t);e=(n?r.A_START_CHAR:r.B_START_CHAR)+u(t,n)}return e.replace(/[\xCD\xCE]([^])[\xCD\xCE]/,(function(t,e){return String.fromCharCode(203)+e}))}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(5),a=(r=i)&&r.__esModule?r:{default:r},u=n(1);var f=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,u.A_START_CHAR+t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return new RegExp("^"+u.A_CHARS+"+$").test(this.data)}}]),e}(a.default);e.default=f},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(5),a=(r=i)&&r.__esModule?r:{default:r},u=n(1);var f=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,u.B_START_CHAR+t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return new RegExp("^"+u.B_CHARS+"+$").test(this.data)}}]),e}(a.default);e.default=f},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(5),a=(r=i)&&r.__esModule?r:{default:r},u=n(1);var f=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,u.C_START_CHAR+t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return new RegExp("^"+u.C_CHARS+"+$").test(this.data)}}]),e}(a.default);e.default=f},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.UPCE=e.UPC=e.EAN2=e.EAN5=e.EAN8=e.EAN13=void 0;var r=c(n(25)),o=c(n(26)),i=c(n(27)),a=c(n(28)),u=c(n(9)),f=c(n(29));function c(t){return t&&t.__esModule?t:{default:t}}e.EAN13=r.default,e.EAN8=o.default,e.EAN5=i.default,e.EAN2=a.default,e.UPC=u.default,e.UPCE=f.default},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=function t(e,n,r){null===e&&(e=Function.prototype);var o=Object.getOwnPropertyDescriptor(e,n);if(void 0===o){var i=Object.getPrototypeOf(e);return null===i?void 0:t(i,n,r)}if("value"in o)return o.value;var a=o.get;return void 0!==a?a.call(r):void 0},a=n(2),u=n(8),f=(r=u)&&r.__esModule?r:{default:r};var c=function(t){return(10-t.substr(0,12).split("").map((function(t){return+t})).reduce((function(t,e,n){return n%2?t+3*e:t+e}),0)%10)%10},s=function(t){function e(t,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),-1!==t.search(/^[0-9]{12}$/)&&(t+=c(t));var r=function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n));return r.lastChar=n.lastChar,r}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return-1!==this.data.search(/^[0-9]{13}$/)&&+this.data[12]===c(this.data)}},{key:"leftText",value:function(){return i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"leftText",this).call(this,1,6)}},{key:"leftEncode",value:function(){var t=this.data.substr(1,6),n=a.EAN13_STRUCTURE[this.data[0]];return i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"leftEncode",this).call(this,t,n)}},{key:"rightText",value:function(){return i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"rightText",this).call(this,7,6)}},{key:"rightEncode",value:function(){var t=this.data.substr(7,6);return i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"rightEncode",this).call(this,t,"RRRRRR")}},{key:"encodeGuarded",value:function(){var t=i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"encodeGuarded",this).call(this);return this.options.displayValue&&(t.unshift({data:"000000000000",text:this.text.substr(0,1),options:{textAlign:"left",fontSize:this.fontSize}}),this.options.lastChar&&(t.push({data:"00"}),t.push({data:"00000",text:this.options.lastChar,options:{fontSize:this.fontSize}}))),t}}]),e}(f.default);e.default=s},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=function t(e,n,r){null===e&&(e=Function.prototype);var o=Object.getOwnPropertyDescriptor(e,n);if(void 0===o){var i=Object.getPrototypeOf(e);return null===i?void 0:t(i,n,r)}if("value"in o)return o.value;var a=o.get;return void 0!==a?a.call(r):void 0},a=n(8),u=(r=a)&&r.__esModule?r:{default:r};var f=function(t){return(10-t.substr(0,7).split("").map((function(t){return+t})).reduce((function(t,e,n){return n%2?t+e:t+3*e}),0)%10)%10},c=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),-1!==t.search(/^[0-9]{7}$/)&&(t+=f(t)),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return-1!==this.data.search(/^[0-9]{8}$/)&&+this.data[7]===f(this.data)}},{key:"leftText",value:function(){return i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"leftText",this).call(this,0,4)}},{key:"leftEncode",value:function(){var t=this.data.substr(0,4);return i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"leftEncode",this).call(this,t,"LLLL")}},{key:"rightText",value:function(){return i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"rightText",this).call(this,4,4)}},{key:"rightEncode",value:function(){var t=this.data.substr(4,4);return i(e.prototype.__proto__||Object.getPrototypeOf(e.prototype),"rightEncode",this).call(this,t,"RRRR")}}]),e}(u.default);e.default=c},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),o=n(2),i=u(n(3)),a=u(n(0));function u(t){return t&&t.__esModule?t:{default:t}}var f=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),r(e,[{key:"valid",value:function(){return-1!==this.data.search(/^[0-9]{5}$/)}},{key:"encode",value:function(){var t,e=o.EAN5_STRUCTURE[(t=this.data,t.split("").map((function(t){return+t})).reduce((function(t,e,n){return n%2?t+9*e:t+3*e}),0)%10)];return{data:"1011"+(0,i.default)(this.data,e,"01"),text:this.text}}}]),e}(a.default);e.default=f},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),o=n(2),i=a(n(3));function a(t){return t&&t.__esModule?t:{default:t}}var u=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),r(e,[{key:"valid",value:function(){return-1!==this.data.search(/^[0-9]{2}$/)}},{key:"encode",value:function(){var t=o.EAN2_STRUCTURE[parseInt(this.data)%4];return{data:"1011"+(0,i.default)(this.data,t,"01"),text:this.text}}}]),e}(a(n(0)).default);e.default=u},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),o=u(n(3)),i=u(n(0)),a=n(9);function u(t){return t&&t.__esModule?t:{default:t}}function f(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}var c=["XX00000XXX","XX10000XXX","XX20000XXX","XXX00000XX","XXXX00000X","XXXXX00005","XXXXX00006","XXXXX00007","XXXXX00008","XXXXX00009"],s=[["EEEOOO","OOOEEE"],["EEOEOO","OOEOEE"],["EEOOEO","OOEEOE"],["EEOOOE","OOEEEO"],["EOEEOO","OEOOEE"],["EOOEEO","OEEOOE"],["EOOOEE","OEEEOO"],["EOEOEO","OEOEOE"],["EOEOOE","OEOEEO"],["EOOEOE","OEEOEO"]],l=function(t){function e(t,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e);var r=f(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n));if(r.isValid=!1,-1!==t.search(/^[0-9]{6}$/))r.middleDigits=t,r.upcA=p(t,"0"),r.text=n.text||""+r.upcA[0]+t+r.upcA[r.upcA.length-1],r.isValid=!0;else{if(-1===t.search(/^[01][0-9]{7}$/))return f(r);if(r.middleDigits=t.substring(1,t.length-1),r.upcA=p(r.middleDigits,t[0]),r.upcA[r.upcA.length-1]!==t[t.length-1])return f(r);r.isValid=!0}return r.displayValue=n.displayValue,n.fontSize>10*n.width?r.fontSize=10*n.width:r.fontSize=n.fontSize,r.guardHeight=n.height+r.fontSize/2+n.textMargin,r}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),r(e,[{key:"valid",value:function(){return this.isValid}},{key:"encode",value:function(){return this.options.flat?this.flatEncoding():this.guardedEncoding()}},{key:"flatEncoding",value:function(){var t="";return t+="101",t+=this.encodeMiddleDigits(),{data:t+="010101",text:this.text}}},{key:"guardedEncoding",value:function(){var t=[];return this.displayValue&&t.push({data:"00000000",text:this.text[0],options:{textAlign:"left",fontSize:this.fontSize}}),t.push({data:"101",options:{height:this.guardHeight}}),t.push({data:this.encodeMiddleDigits(),text:this.text.substring(1,7),options:{fontSize:this.fontSize}}),t.push({data:"010101",options:{height:this.guardHeight}}),this.displayValue&&t.push({data:"00000000",text:this.text[7],options:{textAlign:"right",fontSize:this.fontSize}}),t}},{key:"encodeMiddleDigits",value:function(){var t=this.upcA[0],e=this.upcA[this.upcA.length-1],n=s[parseInt(e)][parseInt(t)];return(0,o.default)(this.middleDigits,n)}}]),e}(i.default);function p(t,e){for(var n=parseInt(t[t.length-1]),r=c[n],o="",i=0,u=0;u<r.length;u++){var f=r[u];o+="X"===f?t[i++]:f}return""+(o=""+e+o)+(0,a.checksum)(o)}e.default=l},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.ITF14=e.ITF=void 0;var r=i(n(10)),o=i(n(32));function i(t){return t&&t.__esModule?t:{default:t}}e.ITF=r.default,e.ITF14=o.default},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});e.START_BIN="1010",e.END_BIN="11101",e.BINARIES=["00110","10001","01001","11000","00101","10100","01100","00011","10010","01010"]},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(10),a=(r=i)&&r.__esModule?r:{default:r};var u=function(t){var e=t.substr(0,13).split("").map((function(t){return parseInt(t,10)})).reduce((function(t,e,n){return t+e*(3-n%2*2)}),0);return 10*Math.ceil(e/10)-e},f=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),-1!==t.search(/^[0-9]{13}$/)&&(t+=u(t)),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return-1!==this.data.search(/^[0-9]{14}$/)&&+this.data[13]===u(this.data)}}]),e}(a.default);e.default=f},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.MSI1110=e.MSI1010=e.MSI11=e.MSI10=e.MSI=void 0;var r=f(n(4)),o=f(n(34)),i=f(n(35)),a=f(n(36)),u=f(n(37));function f(t){return t&&t.__esModule?t:{default:t}}e.MSI=r.default,e.MSI10=o.default,e.MSI11=i.default,e.MSI1010=a.default,e.MSI1110=u.default},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=n(4),i=(r=o)&&r.__esModule?r:{default:r},a=n(6);var u=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t+(0,a.mod10)(t),n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),e}(i.default);e.default=u},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=n(4),i=(r=o)&&r.__esModule?r:{default:r},a=n(6);var u=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t+(0,a.mod11)(t),n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),e}(i.default);e.default=u},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=n(4),i=(r=o)&&r.__esModule?r:{default:r},a=n(6);var u=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),t+=(0,a.mod10)(t),t+=(0,a.mod10)(t),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),e}(i.default);e.default=u},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=n(4),i=(r=o)&&r.__esModule?r:{default:r},a=n(6);var u=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),t+=(0,a.mod11)(t),t+=(0,a.mod10)(t),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),e}(i.default);e.default=u},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.pharmacode=void 0;var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(0);var a=function(t){function e(t,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e);var r=function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n));return r.number=parseInt(t,10),r}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"encode",value:function(){for(var t=this.number,e="";!isNaN(t)&&0!=t;)t%2==0?(e="11100"+e,t=(t-2)/2):(e="100"+e,t=(t-1)/2);return{data:e=e.slice(0,-2),text:this.text}}},{key:"valid",value:function(){return this.number>=3&&this.number<=131070}}]),e}(((r=i)&&r.__esModule?r:{default:r}).default);e.pharmacode=a},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.codabar=void 0;var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(0);var a=function(t){function e(t,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),0===t.search(/^[0-9\-\$\:\.\+\/]+$/)&&(t="A"+t+"A");var r=function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t.toUpperCase(),n));return r.text=r.options.text||r.text.replace(/[A-D]/g,""),r}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"valid",value:function(){return-1!==this.data.search(/^[A-D][0-9\-\$\:\.\+\/]+[A-D]$/)}},{key:"encode",value:function(){for(var t=[],e=this.getEncodings(),n=0;n<this.data.length;n++)t.push(e[this.data.charAt(n)]),n!==this.data.length-1&&t.push("0");return{text:this.text,data:t.join("")}}},{key:"getEncodings",value:function(){return{0:"101010011",1:"101011001",2:"101001011",3:"110010101",4:"101101001",5:"110101001",6:"100101011",7:"100101101",8:"100110101",9:"110100101","-":"101001101",$:"101100101",":":"1101011011","/":"1101101011",".":"1101101101","+":"1011011011",A:"1011001001",B:"1001001011",C:"1010010011",D:"1010011001"}}}]),e}(((r=i)&&r.__esModule?r:{default:r}).default);e.codabar=a},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.GenericBarcode=void 0;var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(0);var a=function(t){function e(t,n){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,t,n))}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),o(e,[{key:"encode",value:function(){return{data:"10101010101010101010101010101010101010101",text:this.text}}},{key:"valid",value:function(){return!0}}]),e}(((r=i)&&r.__esModule?r:{default:r}).default);e.GenericBarcode=a},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(t){var e=[];return function t(n){if(Array.isArray(n))for(var r=0;r<n.length;r++)t(n[r]);else n.text=n.text||"",n.data=n.data||"",e.push(n)}(t),e}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(t){return t.marginTop=t.marginTop||t.margin,t.marginBottom=t.marginBottom||t.margin,t.marginRight=t.marginRight||t.margin,t.marginLeft=t.marginLeft||t.margin,t}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},o=u(n(44)),i=u(n(45)),a=n(14);function u(t){return t&&t.__esModule?t:{default:t}}function f(t){if("string"==typeof t)return function(t){var e=document.querySelectorAll(t);if(0===e.length)return;for(var n=[],r=0;r<e.length;r++)n.push(f(e[r]));return n}(t);if(Array.isArray(t)){for(var e=[],n=0;n<t.length;n++)e.push(f(t[n]));return e}if("undefined"!=typeof HTMLCanvasElement&&t instanceof HTMLImageElement)return u=t,{element:c=document.createElement("canvas"),options:(0,o.default)(u),renderer:i.default.CanvasRenderer,afterRender:function(){u.setAttribute("src",c.toDataURL())}};if(t&&t.nodeName&&"svg"===t.nodeName.toLowerCase()||"undefined"!=typeof SVGElement&&t instanceof SVGElement)return{element:t,options:(0,o.default)(t),renderer:i.default.SVGRenderer};if("undefined"!=typeof HTMLCanvasElement&&t instanceof HTMLCanvasElement)return{element:t,options:(0,o.default)(t),renderer:i.default.CanvasRenderer};if(t&&t.getContext)return{element:t,renderer:i.default.CanvasRenderer};if(t&&"object"===(void 0===t?"undefined":r(t))&&!t.nodeName)return{element:t,renderer:i.default.ObjectRenderer};throw new a.InvalidElementException;var u,c}e.default=f},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=i(n(11)),o=i(n(12));function i(t){return t&&t.__esModule?t:{default:t}}e.default=function(t){var e={};for(var n in o.default)o.default.hasOwnProperty(n)&&(t.hasAttribute("jsbarcode-"+n.toLowerCase())&&(e[n]=t.getAttribute("jsbarcode-"+n.toLowerCase())),t.hasAttribute("data-"+n.toLowerCase())&&(e[n]=t.getAttribute("data-"+n.toLowerCase())));return e.value=t.getAttribute("jsbarcode-value")||t.getAttribute("data-value"),e=(0,r.default)(e)}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=a(n(46)),o=a(n(47)),i=a(n(48));function a(t){return t&&t.__esModule?t:{default:t}}e.default={CanvasRenderer:r.default,SVGRenderer:o.default,ObjectRenderer:i.default}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(7),a=(r=i)&&r.__esModule?r:{default:r},u=n(13);var f=function(){function t(e,n,r){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.canvas=e,this.encodings=n,this.options=r}return o(t,[{key:"render",value:function(){if(!this.canvas.getContext)throw new Error("The browser does not support canvas.");this.prepareCanvas();for(var t=0;t<this.encodings.length;t++){var e=(0,a.default)(this.options,this.encodings[t].options);this.drawCanvasBarcode(e,this.encodings[t]),this.drawCanvasText(e,this.encodings[t]),this.moveCanvasDrawing(this.encodings[t])}this.restoreCanvas()}},{key:"prepareCanvas",value:function(){var t=this.canvas.getContext("2d");t.save(),(0,u.calculateEncodingAttributes)(this.encodings,this.options,t);var e=(0,u.getTotalWidthOfEncodings)(this.encodings),n=(0,u.getMaximumHeightOfEncodings)(this.encodings);this.canvas.width=e+this.options.marginLeft+this.options.marginRight,this.canvas.height=n,t.clearRect(0,0,this.canvas.width,this.canvas.height),this.options.background&&(t.fillStyle=this.options.background,t.fillRect(0,0,this.canvas.width,this.canvas.height)),t.translate(this.options.marginLeft,0)}},{key:"drawCanvasBarcode",value:function(t,e){var n,r=this.canvas.getContext("2d"),o=e.data;n="top"==t.textPosition?t.marginTop+t.fontSize+t.textMargin:t.marginTop,r.fillStyle=t.lineColor;for(var i=0;i<o.length;i++){var a=i*t.width+e.barcodePadding;"1"===o[i]?r.fillRect(a,n,t.width,t.height):o[i]&&r.fillRect(a,n,t.width,t.height*o[i])}}},{key:"drawCanvasText",value:function(t,e){var n,r,o=this.canvas.getContext("2d"),i=t.fontOptions+" "+t.fontSize+"px "+t.font;t.displayValue&&(r="top"==t.textPosition?t.marginTop+t.fontSize-t.textMargin:t.height+t.textMargin+t.marginTop+t.fontSize,o.font=i,"left"==t.textAlign||e.barcodePadding>0?(n=0,o.textAlign="left"):"right"==t.textAlign?(n=e.width-1,o.textAlign="right"):(n=e.width/2,o.textAlign="center"),o.fillText(e.text,n,r))}},{key:"moveCanvasDrawing",value:function(t){this.canvas.getContext("2d").translate(t.width,0)}},{key:"restoreCanvas",value:function(){this.canvas.getContext("2d").restore()}}]),t}();e.default=f},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r,o=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=n(7),a=(r=i)&&r.__esModule?r:{default:r},u=n(13);var f="http://www.w3.org/2000/svg",c=function(){function t(e,n,r){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.svg=e,this.encodings=n,this.options=r,this.document=r.xmlDocument||document}return o(t,[{key:"render",value:function(){var t=this.options.marginLeft;this.prepareSVG();for(var e=0;e<this.encodings.length;e++){var n=this.encodings[e],r=(0,a.default)(this.options,n.options),o=this.createGroup(t,r.marginTop,this.svg);this.setGroupOptions(o,r),this.drawSvgBarcode(o,r,n),this.drawSVGText(o,r,n),t+=n.width}}},{key:"prepareSVG",value:function(){for(;this.svg.firstChild;)this.svg.removeChild(this.svg.firstChild);(0,u.calculateEncodingAttributes)(this.encodings,this.options);var t=(0,u.getTotalWidthOfEncodings)(this.encodings),e=(0,u.getMaximumHeightOfEncodings)(this.encodings),n=t+this.options.marginLeft+this.options.marginRight;this.setSvgAttributes(n,e),this.options.background&&this.drawRect(0,0,n,e,this.svg).setAttribute("style","fill:"+this.options.background+";")}},{key:"drawSvgBarcode",value:function(t,e,n){var r,o=n.data;r="top"==e.textPosition?e.fontSize+e.textMargin:0;for(var i=0,a=0,u=0;u<o.length;u++)a=u*e.width+n.barcodePadding,"1"===o[u]?i++:i>0&&(this.drawRect(a-e.width*i,r,e.width*i,e.height,t),i=0);i>0&&this.drawRect(a-e.width*(i-1),r,e.width*i,e.height,t)}},{key:"drawSVGText",value:function(t,e,n){var r,o,i=this.document.createElementNS(f,"text");e.displayValue&&(i.setAttribute("style","font:"+e.fontOptions+" "+e.fontSize+"px "+e.font),o="top"==e.textPosition?e.fontSize-e.textMargin:e.height+e.textMargin+e.fontSize,"left"==e.textAlign||n.barcodePadding>0?(r=0,i.setAttribute("text-anchor","start")):"right"==e.textAlign?(r=n.width-1,i.setAttribute("text-anchor","end")):(r=n.width/2,i.setAttribute("text-anchor","middle")),i.setAttribute("x",r),i.setAttribute("y",o),i.appendChild(this.document.createTextNode(n.text)),t.appendChild(i))}},{key:"setSvgAttributes",value:function(t,e){var n=this.svg;n.setAttribute("width",t+"px"),n.setAttribute("height",e+"px"),n.setAttribute("x","0px"),n.setAttribute("y","0px"),n.setAttribute("viewBox","0 0 "+t+" "+e),n.setAttribute("xmlns",f),n.setAttribute("version","1.1"),n.setAttribute("style","transform: translate(0,0)")}},{key:"createGroup",value:function(t,e,n){var r=this.document.createElementNS(f,"g");return r.setAttribute("transform","translate("+t+", "+e+")"),n.appendChild(r),r}},{key:"setGroupOptions",value:function(t,e){t.setAttribute("style","fill:"+e.lineColor+";")}},{key:"drawRect",value:function(t,e,n,r,o){var i=this.document.createElementNS(f,"rect");return i.setAttribute("x",t),i.setAttribute("y",e),i.setAttribute("width",n),i.setAttribute("height",r),o.appendChild(i),i}}]),t}();e.default=c},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}();var o=function(){function t(e,n,r){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.object=e,this.encodings=n,this.options=r}return r(t,[{key:"render",value:function(){this.object.encodings=this.encodings}}]),t}();e.default=o},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}();var o=function(){function t(e){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.api=e}return r(t,[{key:"handleCatch",value:function(t){if("InvalidInputException"!==t.name)throw t;if(this.api._options.valid===this.api._defaults.valid)throw t.message;this.api._options.valid(!1),this.api.render=function(){}}},{key:"wrapBarcodeCall",value:function(t){try{var e=t.apply(void 0,arguments);return this.api._options.valid(!0),e}catch(t){return this.handleCatch(t),this.api}}}]),t}();e.default=o}]);
+</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .location-container h1 {
+            color: #333;
+        }
+        #selectionScreen {
+            text-align: center;
+            padding: 15vh 0;
+        }
+        .selection-prompt {
+            text-align: center;
+            color: #6c757d;
+            font-size: 18px;
+            margin-top: -15px;
+            margin-bottom: 30px;
+        }
+        .selection-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        .location-choice-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .location-choice-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,123,255,0.2);
+        }
+        .location-choice-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,123,255,0.3);
+        }
+        .rf-main-button-small {
+            padding: 12px 28px;
+            font-size: 18px;
+            background-color: #28a745;
+        }
+        .rf-main-button-small:hover {
+            background-color: #218838;
+        }
+        .location-container { display: none; }
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .range-button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            font-size: 13px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 100px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .range-button:hover {
+            background-color: #5a6268;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+        .range-button.active {
+            background-color: #007bff;
+            box-shadow: 0 0 8px rgba(0,123,255,0.5);
+            transform: translateY(-1px);
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .clear-button, .back-button {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .clear-button { background-color: #dc3545; }
+        .clear-button:hover { background-color: #c82333; }
+        .back-button { background-color: #17a2b8; }
+        .back-button:hover { background-color: #138496; }
+        .info {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .barcode-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 400px;
+            background-color: #343a40;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #212529;
+        }
+        .barcode-item {
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #495057;
+            border-radius: 5px;
+            background-color: transparent;
+            opacity: 0.6;
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+        }
+        .barcode-item .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+        }
+        .barcode-item .content-wrapper { min-width: 0; max-width: 100%; }
+        /* Odak dışında yalnız gizlenir, yer kaplamaya devam eder: kart yüksekliği odakla değişirse kaydırırken sayfa titrer. */
+        .barcode-item .barcode-svg { visibility: hidden; }
+        .barcode-item.barcode-item-focused {
+            opacity: 1;
+            transform: scale(1.05);
+            border-color: #007bff;
+            box-shadow: 0 0 15px rgba(0,123,255,0.4);
+            background-color: white;
+        }
+        .barcode-item.barcode-item-focused .barcode-svg { visibility: visible; }
+        .barcode-item h3 {
+            margin: 0 0 10px 0;
+            color: #f8f9fa;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .barcode-item.barcode-item-focused h3 { color: #343a40; text-shadow: none; }
+        .barcode-svg { margin: 10px 0; }
+
+        #scroll-buttons-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s, visibility 0.4s;
+        }
+        #scroll-buttons-container.show { opacity: 1; visibility: visible; }
+
+        #range-nav-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 200px;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s, visibility 0.4s;
+            pointer-events: none;
+        }
+        #range-nav-container.show { opacity: 1; visibility: visible; }
+
+        .scroll-btn, .nav-range-btn {
+            border: none;
+            outline: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, opacity 0.3s;
+            pointer-events: auto;
+        }
+        .scroll-btn:hover, .nav-range-btn:hover { background-color: #0056b3; }
+        .scroll-btn svg, .nav-range-btn svg { fill: white; width: 17px; height: 17px; }
+        .nav-range-btn[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: #6c757d;
+        }
+
+        .floating-rf-button {
+            position: fixed;
+            bottom: 125px;
+            left: 20px;
+            width: 35px;
+            height: 35px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 101;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s ease, opacity 0.4s, visibility 0.4s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .floating-rf-button.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .floating-rf-button:hover { transform: scale(1.1); }
+
+        .floating-edit-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 102;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s ease, background-color 0.3s, opacity 0.3s;
+        }
+        .floating-edit-button:hover {
+            background-color: #5a6268;
+            transform: scale(1.1);
+        }
+        .floating-edit-button.show {
+            display: flex;
+        }
+
+        .floating-add-button {
+            position: fixed;
+            bottom: 75px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 103;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            line-height: 45px;
+            transition: transform 0.2s ease, background-color 0.3s, opacity 0.3s;
+        }
+        .floating-add-button:hover {
+            background-color: #138496;
+            transform: scale(1.1);
+        }
+        .floating-add-button.show {
+            display: flex;
+        }
+
+        .location-edit-button {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 105;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s ease, background-color 0.3s, opacity 0.3s, visibility 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .location-edit-button.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .location-edit-button:hover {
+            background-color: #5a6268;
+            transform: scale(1.1);
+        }
+
+        .overlay-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65);
+            z-index: 200;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(3px);
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+        .modal-content {
+            position: relative;
+            background-color: #f0f0f0;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            max-width: 550px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        #rf-barcode-area, #sevk-barcode-area {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px;
+            background-color: #343a40;
+            border-radius: 8px;
+        }
+        .modal-barcode-item {
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 120px;
+        }
+        .modal-barcode-item h3 {
+            margin: 0 0 10px 0;
+            color: #343a40;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: none;
+        }
+        .modal-barcode-item .barcode-svg {
+            margin: 10px 0;
+            display: block !important;
+        }
+        .close-button {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .rf-nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+        .rf-nav-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .rf-nav-button:hover { background-color: #0056b3; }
+
+        .modal-content h3 { text-align: center; color: #333; margin-bottom: 10px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-weight: bold; color: #555; font-size: 14px; }
+        .form-group select, .form-group input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px;}
+        .modal-actions button {
+             padding: 10px 20px;
+             font-size: 14px;
+             border-radius: 5px;
+             cursor: pointer;
+             border: none;
+             color: white;
+        }
+        .save-button { background-color: #28a745; }
+        .save-button:hover { background-color: #218838; }
+        .delete-button { background-color: #dc3545; }
+        .delete-button:hover { background-color: #c82333; }
+
+        #location-editor-area {
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+        .location-range-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #fff;
+            margin-bottom: 15px;
+        }
+        .location-range-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        .location-range-item:last-child { border-bottom: none; }
+        .location-range-item:hover { background-color: #e9ecef; }
+        .location-range-item.selected { background-color: #007bff; color: white; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        #add-barcode-preview-area {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+        .modal-header-actions {
+            position: absolute;
+            top: 15px;
+            right: 50px;
+        }
+        .modal-header-actions .link-button {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+        #saved-barcodes-list-container {
+            display: none;
+        }
+        .saved-barcode-list {
+             max-height: 250px;
+             overflow-y: auto;
+             border: 1px solid #ddd;
+             background: #fff;
+             border-radius: 6px;
+        }
+        .saved-barcode-item {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             padding: 10px;
+             border-bottom: 1px solid #eee;
+             cursor: pointer;
+        }
+        .saved-barcode-item:hover { background-color: #e9ecef; }
+        .saved-barcode-item-delete {
+            color: #dc3545;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        /* === YENİ BİLDİRİM STİLLERİ === */
+        #notification-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            pointer-events: none;
+        }
+        .notification {
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .notification.success {
+            background-color: #28a745; /* Yeşil */
+        }
+        .notification.error {
+            background-color: #dc3545; /* Kırmızı */
+        }
+        /* === BİTTİ: YENİ BİLDİRİM STİLLERİ === */
+
+
+        @media print {
+            body, .container { background-color: white; margin: 0; padding: 0; box-shadow: none; }
+            .controls, #selectionScreen, #scroll-buttons-container, #range-nav-container, .floating-rf-button, .floating-edit-button, .overlay-container, .location-edit-button, .floating-add-button, #notification-container { display: none; }
+            .barcode-grid { padding-bottom: 20px; background-color: transparent; padding: 0; border-radius: 0; border: none; }
+            .barcode-item {
+                opacity: 1; transform: scale(1); min-height: auto; display: block; page-break-inside: avoid;
+                background-color: white !important; border: 1px solid #ccc;
+            }
+            .barcode-item h3 { color: #000 !important; text-shadow: none; }
+            .barcode-item .barcode-svg { visibility: visible; }
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { max-width: 100%; overflow-x: hidden; overscroll-behavior-x: none; }
+        body { touch-action: manipulation; }
+        .barcode-grid { overflow-x: hidden; /* avoid transform or SVG overflow causing horizontal scroll */ }
+        /* Allow narrower cards on small screens */
+        @media (max-width: 420px) { .barcode-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } }
+        /* Keep focused card from expanding layout on small screens */
+        @media (max-width: 480px) { .barcode-item.barcode-item-focused { transform: none; } }
+        /* Ensure barcodes never overflow their container */
+        .barcode-svg { display: block; max-width: 100%; height: auto; }
+        .barkod-uyari { margin: 0; color: #dc3545; font-size: 14px; text-align: center; }
+        .rf-yuva { text-align: center; color: #666; font-size: 12px; font-weight: bold; letter-spacing: 0.3px; }
+        /* Add safe-area padding for notches */
+        .container { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+        /* --- Sistem seçimine dönüş: ikon düğme --- */
+        .back-to-launcher-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: #fff;
+            color: #007bff;
+            border: 1.5px solid #007bff;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,123,255,0.15);
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 12px;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .back-to-launcher-btn:hover { background: #007bff; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,123,255,0.3); }
+        .back-to-launcher-btn:focus-visible { outline: 3px solid #86b7fe; outline-offset: 2px; }
+        .back-to-launcher-btn svg { flex-shrink: 0; }
+        /* --- Sevk barkodlarını düzenleme --- */
+        .sevk-button {
+            min-height: 44px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .sevk-edit-button { align-self: center; background-color: #0a58ca; }
+        .sevk-edit-button:hover { background-color: #084298; }
+        .sevk-edit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding-top: 16px;
+            border-top: 2px solid #ddd;
+        }
+        .sevk-edit-form[hidden] { display: none; }
+        .sevk-edit-form h3 { margin: 0; }
+        .sevk-edit-form input { min-height: 44px; }
+        .sevk-form-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+        .sevk-save-button { grid-column: 1 / -1; background-color: #1e7e34; }
+        .sevk-save-button:hover { background-color: #19692c; }
+        .sevk-reset-button { background-color: #5c636a; }
+        .sevk-reset-button:hover { background-color: #4d5154; }
+        .sevk-cancel-button { background-color: #fff; color: #333; border: 1.5px solid #adb5bd; }
+        .sevk-cancel-button:hover { background-color: #e9ecef; }
+        .sevk-button:focus-visible, .sevk-edit-form input:focus-visible { outline: 3px solid #86b7fe; outline-offset: 2px; }
+        #selectionScreen { text-align: center; }</style>
+</head>
+<body>
+    <div id="notification-container"></div>
+
+    <div class="container">
+        <div id="selectionScreen" style="display: block;">
+            <div style="text-align:left; margin-bottom:4px;">
+                <a href="../index.html" class="back-to-launcher-btn" aria-label="Sistem seçimine dön" title="Sistem seçimine dön">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v11a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9"/></svg>
+                </a>
+            </div>
+            <h1>LOKASYONLAR</h1>
+            <p class="selection-prompt">Seçiniz</p>
+            <div class="selection-container">
+                <div class="location-choice-group">
+                    <button class="location-choice-button" onclick="showLocation('g3')">G3</button>
+                    <button class="location-choice-button" onclick="showLocation('tt')">TT</button>
+                </div>
+                 <div class="location-choice-group">
+                    <button class="location-choice-button rf-main-button-small" onclick="openRfModal('all')">RF</button>
+                    <button class="location-choice-button rf-main-button-small" style="background-color: #FA5A5A;" onclick="openSevkModal('main')">Sevk</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="g3Container" class="location-container">
+            <button id="g3-edit-fab" class="location-edit-button" title="G3 Lokasyonlarını Düzenle" onclick="openLocationEditModal('g3')">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            </button>
+            <h1>G3</h1>
+            <div class="controls">
+                <div id="g3-button-group-wrapper"></div>
+                <div class="action-buttons">
+                    <button class="clear-button" onclick="clearAll()">🗑️ Temizle</button>
+                    <button class="back-button" onclick="goBackToMenu()">Ana Menüye Dön</button>
+                </div>
+            </div>
+            <div class="info" id="g3Info">Bir kod aralığı seçin</div>
+            <div class="barcode-grid" id="g3BarcodeGrid"></div>
+        </div>
+
+        <div id="ttContainer" class="location-container">
+             <button id="tt-edit-fab" class="location-edit-button" title="TT Lokasyonlarını Düzenle" onclick="openLocationEditModal('tt')">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            </button>
+            <h1>TT</h1>
+            <div class="controls">
+                 <div id="tt-button-group-wrapper"></div>
+                 <div class="action-buttons">
+                    <button class="clear-button" onclick="clearAll()">🗑️ Temizle</button>
+                    <button class="back-button" onclick="goBackToMenu()">Ana Menüye Dön</button>
+                </div>
+            </div>
+            <div class="info" id="ttInfo">Bir kod aralığı seçin</div>
+            <div class="barcode-grid" id="ttBarcodeGrid"></div>
+        </div>
+    </div>
+
+    <div id="scroll-buttons-container">
+        <button id="scrollToTopBtn" class="scroll-btn" title="En üste git"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+        <button id="scrollToBottomBtn" class="scroll-btn" title="En alta git"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
+    </div>
+
+    <div id="range-nav-container">
+        <button id="prevRangeBtn" class="nav-range-btn" title="Önceki Grup"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+        <button id="nextRangeBtn" class="nav-range-btn" title="Sonraki Grup"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
+    </div>
+
+    <button id="rf-fab" class="floating-rf-button" onclick="openRfModal()">RF</button>
+
+    <button id="add-barcode-fab" class="floating-add-button" title="Yeni Barkod Oluştur" onclick="openAddBarcodeModal()">+</button>
+
+    <button id="edit-fab" class="floating-edit-button" title="Kullanıcı Bilgilerini Düzenle" onclick="openEditModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+    </button>
+
+    <div id="rf-overlay" class="overlay-container">
+        <div id="rf-modal" class="modal-content">
+            <button class="close-button" onclick="closeRfModal()">&times;</button>
+            <div id="rf-yuva" class="rf-yuva"></div>
+            <div id="rf-barcode-area"></div>
+            <div class="rf-nav-arrows">
+                <button id="rf-prev-btn" class="rf-nav-button">&#10094;</button>
+                <button id="rf-next-btn" class="rf-nav-button">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sevk-overlay" class="overlay-container">
+        <div id="sevk-modal" class="modal-content">
+            <button class="close-button" onclick="closeSevkModal()">&times;</button>
+            <div id="sevk-barcode-area"></div>
+            <button type="button" id="sevk-edit-btn" class="sevk-button sevk-edit-button" onclick="openSevkEditForm()">✏️ Düzenle</button>
+            <div id="sevk-edit-form" class="sevk-edit-form" hidden>
+                <h3>Sevk Barkodlarını Düzenle</h3>
+                <div class="form-group">
+                    <label for="sevk-edit-g3">G3 sevk barkodu:</label>
+                    <input type="text" id="sevk-edit-g3" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="form-group">
+                    <label for="sevk-edit-tt">TT sevk barkodu:</label>
+                    <input type="text" id="sevk-edit-tt" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="sevk-form-actions">
+                    <button type="button" id="sevk-save-btn" class="sevk-button sevk-save-button" onclick="saveSevkCodes()">💾 Kaydet</button>
+                    <button type="button" id="sevk-reset-btn" class="sevk-button sevk-reset-button" onclick="resetSevkCodes()">Varsayılana Dön</button>
+                    <button type="button" id="sevk-cancel-btn" class="sevk-button sevk-cancel-button" onclick="closeSevkEditForm()">Vazgeç</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-overlay" class="overlay-container">
+        <div id="edit-modal" class="modal-content">
+            <button class="close-button" onclick="closeEditModal()">&times;</button>
+            <h3>RF Kullanıcı Bilgilerini Düzenle</h3>
+            <div class="form-group">
+                <label for="edit-user-select">Düzenlenecek Kullanıcı:</label>
+                <select id="edit-user-select" onchange="populateEditForm()"></select>
+            </div>
+            <div class="form-group">
+                <label for="edit-username">Yeni Kullanıcı Adı:</label>
+                <input type="text" id="edit-username" placeholder="Yeni kullanıcı adını girin">
+            </div>
+            <div class="form-group">
+                <label for="edit-password">Yeni Şifre:</label>
+                <input type="text" id="edit-password" placeholder="Yeni şifreyi girin">
+            </div>
+            <div class="modal-actions">
+                 <button class="save-button" onclick="saveCredentials()">💾 Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="location-edit-overlay" class="overlay-container">
+        <div id="location-edit-modal" class="modal-content">
+            <button class="close-button" onclick="closeLocationEditModal()">&times;</button>
+            <h3 id="location-edit-title">Lokasyonları Düzenle</h3>
+            <div class="form-group">
+                <label>Mevcut Aralıklar (Düzenlemek için seçin):</label>
+                <div id="location-range-list" class="location-range-list"></div>
+            </div>
+            <div id="location-editor-area">
+                <h4 id="location-form-title" style="text-align:center; margin-top:0;">Yeni Aralık Ekle</h4>
+                <input type="hidden" id="location-edit-original-name">
+                 <div class="form-group">
+                    <label for="location-edit-name">Buton Adı (Örn: G3-V1):</label>
+                    <input type="text" id="location-edit-name" placeholder="Ekranda görünecek benzersiz isim">
+                </div>
+                <div class="form-group">
+                    <label for="location-edit-prefix">Barkod Ön Eki (Örn: G3V1):</label>
+                    <input type="text" id="location-edit-prefix" placeholder="Barkodun başlangıç kısmı">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location-edit-start">Başlangıç Numarası:</label>
+                        <input type="number" id="location-edit-start" placeholder="1">
+                    </div>
+                     <div class="form-group">
+                        <label for="location-edit-end">Bitiş Numarası:</label>
+                        <input type="number" id="location-edit-end" placeholder="99">
+                    </div>
+                </div>
+                <div class="modal-actions">
+                     <button class="delete-button" id="location-delete-btn" onclick="deleteLocationRange()" style="margin-right: auto; display: none;">🗑️ Sil</button>
+                     <button class="save-button" onclick="saveLocationRange()">💾 Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="add-barcode-overlay" class="overlay-container">
+        <div id="add-barcode-modal" class="modal-content">
+            <button class="close-button" onclick="closeAddBarcodeModal()">&times;</button>
+            <div class="modal-header-actions">
+                <button class="link-button" id="toggle-saved-barcodes-btn" onclick="showSavedBarcodesView()">Kaydedilenler</button>
+                 <button class="link-button" id="toggle-create-new-btn" onclick="showCreateBarcodeView()" style="display: none;">Yeni Oluştur</button>
+            </div>
+
+            <div id="add-barcode-form-container">
+                <h3>Yeni Barkod Oluştur</h3>
+                <div class="form-group">
+                    <label for="add-barcode-value">Barkod Değeri:</label>
+                    <input type="text" id="add-barcode-value" placeholder="Barkoda dönüştürülecek metin" oninput="previewCustomBarcode(this.value)">
+                </div>
+                 </div>
+
+            <div id="saved-barcodes-list-container">
+                 <h3>Kaydedilen Barkodlar</h3>
+                 <div id="saved-barcodes-list" class="saved-barcode-list">
+                    </div>
+            </div>
+
+            <div id="add-barcode-preview-area">
+                </div>
+            <div class="modal-actions" id="add-barcode-actions-container">
+                 <button class="save-button" onclick="saveCustomBarcode()">💾 Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let allCodeRanges = {};
+
+        let defaultCodeRanges = {
+            g3: {
+                'GR-ZONE': { name: 'GR-ZONE', prefix: 'GR-ZONE', start: 1, end: 1 },
+                'G3-A1': { name: 'G3-A1', prefix: 'G3A1', start: 1, end: 99 },
+                'G3-B1': { name: 'G3-B1', prefix: 'G3B1', start: 1, end: 99 },
+                'G3-B2': { name: 'G3-B2', prefix: 'G3B2', start: 1, end: 99 },
+                'G3-C1': { name: 'G3-C1', prefix: 'G3C1', start: 1, end: 99 },
+                'G3-C2': { name: 'G3-C2', prefix: 'G3C2', start: 1, end: 99 },
+                'G3-D1': { name: 'G3-D1', prefix: 'G3D1', start: 1, end: 99 },
+                'G3-D2': { name: 'G3-D2', prefix: 'G3D2', start: 1, end: 99 }
+            },
+            tt: {
+                'GR-ZONE': { name: 'GR-ZONE', prefix: 'GR-ZONE', start: 1, end: 1 },
+                'TT-A1': { name: 'TT-A1', prefix: 'TTA1', start: 1, end: 99 },
+                'TT-B1': { name: 'TT-B1', prefix: 'TTB1', start: 1, end: 99 },
+                'TT-B2': { name: 'TT-B2', prefix: 'TTB2', start: 1, end: 99 },
+                'TT-C1': { name: 'TT-C1', prefix: 'TTC1', start: 1, end: 99 },
+                'TT-C2': { name: 'TT-C2', prefix: 'TTC2', start: 1, end: 99 },
+                'TT-D1': { name: 'TT-D1', prefix: 'TTD1', start: 1, end: 99 },
+                'TT-D2': { name: 'TT-D2', prefix: 'TTD2', start: 1, end: 99 },
+                'TT-E1': { name: 'TT-E1', prefix: 'TTE1', start: 1, end: 99 },
+                'TT-E2': { name: 'TT-E2', prefix: 'TTE2', start: 1, end: 99 },
+                'TT-F1': { name: 'TT-F1', prefix: 'TTF1', start: 1, end: 99 },
+                'TT-F2': { name: 'TT-F2', prefix: 'TTF2', start: 1, end: 99 }
+            },
+            // Gerçek RF bilgileri koda yazılmaz. Herkes kendi telefonunda düzenler, telefonda saklanır.
+            // Anahtar sabit yuva kimliğidir: adlar aynı olabilir (hepsi başlangıçta 0000).
+            rf: {
+                'g3-1': { ad: '0000', password: '0000', location: 'g3' },
+                'g3-2': { ad: '0000', password: '0000', location: 'g3' },
+                'g3-3': { ad: '0000', password: '0000', location: 'g3' },
+                'tt-1': { ad: '0000', password: '0000', location: 'tt' },
+                'tt-2': { ad: '0000', password: '0000', location: 'tt' }
+            }
+        };
+
+        // Gerçek sevk kodları koda yazılmaz (RF gibi): herkes kendi telefonunda düzenler, telefonda saklanır.
+        const SEVK_ANAHTARI = 'sevkKodlari';
+        const VARSAYILAN_SEVK = { g3: '0000', tt: '0000' };
+        const SEVK_EN_COK = 32;
+        const RF_ANAHTARI = 'rfBilgileri';
+        // Canlı sürüm aynı adreste bu anahtarı kullanır: yalnız okunur, silinmez ve değiştirilmez.
+        const ESKI_RF_ANAHTARI = 'rfCredentials';
+        const AZAMI_BARKOD = 1000;
+        const RF_MODUL = 1.8;
+        const BARKOD_UYARISI = 'Bu değer barkoda çevrilemedi. Türkçe harf kullanmayın.';
+
+        // DOM Elementleri
+        const selectionScreen = document.getElementById('selectionScreen');
+        const g3Container = document.getElementById('g3Container');
+        const ttContainer = document.getElementById('ttContainer');
+        const rfFab = document.getElementById('rf-fab');
+        const rfOverlay = document.getElementById('rf-overlay');
+        const editFab = document.getElementById('edit-fab');
+        const editOverlay = document.getElementById('edit-overlay');
+        const addBarcodeFab = document.getElementById('add-barcode-fab');
+        const addBarcodeOverlay = document.getElementById('add-barcode-overlay');
+        const sevkOverlay = document.getElementById('sevk-overlay');
+        const g3EditFab = document.getElementById('g3-edit-fab');
+        const ttEditFab = document.getElementById('tt-edit-fab');
+        const locationEditOverlay = document.getElementById('location-edit-overlay');
+        const locationRangeList = document.getElementById('location-range-list');
+        const locationFormTitle = document.getElementById('location-form-title');
+        const locationEditOriginalName = document.getElementById('location-edit-original-name');
+        const locationEditNameInput = document.getElementById('location-edit-name');
+        const locationEditPrefixInput = document.getElementById('location-edit-prefix');
+        const locationEditStartInput = document.getElementById('location-edit-start');
+        const locationEditEndInput = document.getElementById('location-edit-end');
+        const locationDeleteBtn = document.getElementById('location-delete-btn');
+        const scrollButtonsContainer = document.getElementById("scroll-buttons-container");
+        const rangeNavContainer = document.getElementById("range-nav-container");
+        const prevRangeBtn = document.getElementById("prevRangeBtn");
+        const nextRangeBtn = document.getElementById("nextRangeBtn");
+
+        // Diğer Değişkenler
+        let activeLocation = null, currentRangeName = null, scrollEndTimer = null, targetScrollInfo = null, currentRfList = [], currentRfIndex = 0, editingLocationType = null;
+        let sevkKodlari = Object.assign({}, VARSAYILAN_SEVK), sevkAcikTur = 'main';
+
+        // Başlangıç Fonksiyonları
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllDataFromStorage();
+            updateMainScreenButtons();
+
+            document.getElementById('rf-prev-btn').addEventListener('click', prevRfSlide);
+            document.getElementById('rf-next-btn').addEventListener('click', nextRfSlide);
+            document.getElementById('scrollToTopBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            document.getElementById('scrollToBottomBtn').addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
+            prevRangeBtn.addEventListener('click', () => navigateRange(-1));
+            nextRangeBtn.addEventListener('click', () => navigateRange(1));
+        });
+
+        // Kayıtlar kullanıcının telefonundan gelir: bozuk veya yanlış türde olabilir.
+        const nesneMi = (d) => d !== null && typeof d === 'object' && !Array.isArray(d);
+        const doluMetin = (d) => typeof d === 'string' && d.trim() !== '';
+        const kopya = (d) => JSON.parse(JSON.stringify(d));
+        // Yalnız yazdırılabilir ASCII: Code128'in düzgün taşıdığı ve el terminalinin aynen okuduğu karakterler.
+        const barkodaCevrilir = (d) => /^[\x20-\x7E]+$/.test(d);
+
+        function kayitOku(anahtar) {
+            try { return JSON.parse(localStorage.getItem(anahtar)); }
+            catch (e) { return null; }
+        }
+
+        function loadAllDataFromStorage() {
+            allCodeRanges.rf = rfYukle();
+            sevkKodlari = sevkYukle();
+            const kayitliAraliklar = kayitOku('locationRanges');
+            const atlananG3 = araliklariYukle('g3', kayitliAraliklar);
+            const atlananTt = araliklariYukle('tt', kayitliAraliklar);
+            if (atlananG3 + atlananTt > 0) {
+                showNotification(`${atlananG3 + atlananTt} geçersiz aralık yüklenmedi.`, 'error');
+            }
+        }
+
+        function rfSuz(kayit) {
+            if (!nesneMi(kayit)) return null;
+            const sonuc = {};
+            Object.keys(kayit).forEach(id => {
+                const b = kayit[id];
+                if (nesneMi(b) && doluMetin(b.ad) && doluMetin(b.password) && (b.location === 'g3' || b.location === 'tt')) {
+                    sonuc[id] = { ad: b.ad, password: b.password, location: b.location };
+                }
+            });
+            return Object.keys(sonuc).length > 0 ? sonuc : null;
+        }
+
+        function rfYukle() {
+            const kayitli = rfSuz(kayitOku(RF_ANAHTARI));
+            if (kayitli) return kayitli;
+
+            // Telefonda eski biçimde kayıt varsa bir kez içe aktarılır: { kullanıcıAdı: { password, location } }
+            const eski = kayitOku(ESKI_RF_ANAHTARI);
+            if (nesneMi(eski)) {
+                const donusen = {};
+                Object.keys(eski).forEach(ad => { if (nesneMi(eski[ad])) donusen[ad] = Object.assign({}, eski[ad], { ad }); });
+                const aktarilan = rfSuz(donusen);
+                if (aktarilan) {
+                    try { localStorage.setItem(RF_ANAHTARI, JSON.stringify(aktarilan)); }
+                    catch (e) { console.warn('RF bilgileri içe aktarılırken kaydedilemedi.'); }
+                    return aktarilan;
+                }
+            }
+            return kopya(defaultCodeRanges.rf);
+        }
+
+        function aralikGecerli(a) {
+            return nesneMi(a) && doluMetin(a.name) && doluMetin(a.prefix)
+                && Number.isInteger(a.start) && Number.isInteger(a.end)
+                && a.start >= 0 && a.start <= a.end && a.end - a.start + 1 <= AZAMI_BARKOD;
+        }
+
+        // Yanlış türdeki kayıt yerine varsayılanlar kullanılır; tek tek geçersiz aralıklar atlanır ve sayısı döner.
+        function araliklariYukle(tur, kayit) {
+            const kayitli = nesneMi(kayit) ? kayit[tur] : null;
+            allCodeRanges[tur] = kopya(defaultCodeRanges[tur]);
+            if (!nesneMi(kayitli)) return 0;
+
+            const anahtarlar = Object.keys(kayitli);
+            const gecerli = anahtarlar.filter(k => aralikGecerli(kayitli[k]));
+            const atlanan = anahtarlar.length - gecerli.length;
+            // Kullanıcı bütün aralıkları silmiş olabilir: boş kayıt geçerlidir. Hepsi bozuksa varsayılan kalır.
+            if (anahtarlar.length === 0 || gecerli.length > 0) {
+                allCodeRanges[tur] = {};
+                gecerli.forEach(k => { allCodeRanges[tur][k] = kayitli[k]; });
+            }
+            return atlanan;
+        }
+
+        function updateMainScreenButtons() {
+            const isSelectionScreen = selectionScreen.style.display === 'block';
+            addBarcodeFab.classList.toggle('show', isSelectionScreen);
+            editFab.classList.toggle('show', isSelectionScreen);
+
+            const isAtTop = window.scrollY < 50;
+            g3EditFab.classList.toggle('show', activeLocation === 'g3' && isAtTop);
+            ttEditFab.classList.toggle('show', activeLocation === 'tt' && isAtTop);
+        }
+
+        // Modal Kapatma/Açma
+        const closeRfModal = () => rfOverlay.style.display = 'none';
+        const closeSevkModal = () => sevkOverlay.style.display = 'none';
+        const closeEditModal = () => editOverlay.style.display = 'none';
+        const closeLocationEditModal = () => locationEditOverlay.style.display = 'none';
+        const openAddBarcodeModal = () => {
+            showCreateBarcodeView();
+            addBarcodeOverlay.style.display = 'flex';
+        }
+        const closeAddBarcodeModal = () => addBarcodeOverlay.style.display = 'none';
+
+        // === YENİ: MODERN BİLDİRİM FONKSİYONU ===
+        function showNotification(message, type = 'success', duration = 3000) {
+            const container = document.getElementById('notification-container');
+            if (!container) return;
+
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+
+            container.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+
+            // Animate out and remove
+            setTimeout(() => {
+                notification.classList.remove('show');
+                notification.addEventListener('transitionend', () => {
+                    if (notification.parentElement) {
+                        notification.parentElement.removeChild(notification);
+                    }
+                });
+            }, duration);
+        }
+        
+        // Genel Fonksiyonlar
+        function barkodUyarisi() {
+            const uyari = document.createElement('p');
+            uyari.className = 'barkod-uyari';
+            uyari.textContent = BARKOD_UYARISI;
+            return uyari;
+        }
+
+        // Çizilemeyen barkodun yerine uyarı konur. İçerik konsola yazılmaz: RF şifresi olabilir.
+        function barkodCiz(kap, deger, secenekler) {
+            if (!barkodaCevrilir(deger)) { kap.appendChild(barkodUyarisi()); return; }
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('class', 'barcode-svg');
+            kap.appendChild(svg);
+            try {
+                JsBarcode(svg, deger, Object.assign({ format: "CODE128", displayValue: false, background: "#ffffff", lineColor: "#000000" }, secenekler));
+            } catch (e) {
+                svg.remove();
+                kap.appendChild(barkodUyarisi());
+            }
+        }
+
+        function createModalBarcodeItem(text, code) {
+            const item = document.createElement('div');
+            item.className = 'modal-barcode-item';
+            const title = document.createElement('h3');
+            title.textContent = text;
+            item.appendChild(title);
+            // Code128 iki yanda en az 10 modül boşluk ister.
+            barkodCiz(item, code, { width: RF_MODUL, height: 50, margin: 10 * RF_MODUL });
+            return item;
+        }
+
+        // RF Fonksiyonları
+        function openRfModal(source) {
+            const rfBarcodeArea = document.getElementById('rf-barcode-area');
+
+            if (source === 'all') {
+                currentRfList = Object.keys(allCodeRanges.rf).sort();
+            } else if (activeLocation) {
+                currentRfList = Object.keys(allCodeRanges.rf).filter(id => allCodeRanges.rf[id].location === activeLocation).sort();
+            } else {
+                return;
+            }
+
+            if (currentRfList.length === 0) {
+                showNotification("Bu lokasyona atanmış RF kullanıcısı bulunmamaktadır.", 'error');
+                return;
+            };
+            currentRfIndex = 0;
+            displayCurrentRfSlide();
+            rfOverlay.style.display = 'flex';
+        }
+
+        function displayCurrentRfSlide() {
+            const rfBarcodeArea = document.getElementById('rf-barcode-area');
+            rfBarcodeArea.innerHTML = '';
+            if (currentRfList.length === 0) return;
+            const { ad, password, location } = allCodeRanges.rf[currentRfList[currentRfIndex]];
+            document.getElementById('rf-yuva').textContent = `${location.toUpperCase()} · ${currentRfIndex + 1}/${currentRfList.length}`;
+            rfBarcodeArea.appendChild(createModalBarcodeItem(ad, ad));
+            rfBarcodeArea.appendChild(createModalBarcodeItem(password, password));
+        }
+
+        const nextRfSlide = () => { if (currentRfList.length > 0) { currentRfIndex = (currentRfIndex + 1) % currentRfList.length; displayCurrentRfSlide(); } }
+        const prevRfSlide = () => { if (currentRfList.length > 0) { currentRfIndex = (currentRfIndex - 1 + currentRfList.length) % currentRfList.length; displayCurrentRfSlide(); } }
+
+        // Sevk Fonksiyonları
+        const sevkKoduGecerli = (d) => doluMetin(d) && d.length <= SEVK_EN_COK && barkodaCevrilir(d);
+
+        // Bozuk veya geçersiz kayıt yerine varsayılan kullanılır.
+        function sevkYukle() {
+            const kayit = kayitOku(SEVK_ANAHTARI);
+            const sonuc = Object.assign({}, VARSAYILAN_SEVK);
+            if (nesneMi(kayit)) ['g3', 'tt'].forEach(tur => { if (sevkKoduGecerli(kayit[tur])) sonuc[tur] = kayit[tur]; });
+            return sonuc;
+        }
+
+        function sevkBarkodlariniCiz() {
+            const sevkBarcodeArea = document.getElementById('sevk-barcode-area');
+            sevkBarcodeArea.innerHTML = '';
+            if (sevkAcikTur === 'main' || sevkAcikTur === 'g3') sevkBarcodeArea.appendChild(createModalBarcodeItem(sevkKodlari.g3, sevkKodlari.g3));
+            if (sevkAcikTur === 'main' || sevkAcikTur === 'tt') sevkBarcodeArea.appendChild(createModalBarcodeItem(sevkKodlari.tt, sevkKodlari.tt));
+        }
+
+        function openSevkModal(type) {
+            sevkAcikTur = type;
+            sevkBarkodlariniCiz();
+            closeSevkEditForm();
+            sevkOverlay.style.display = 'flex';
+        }
+
+        function openSevkEditForm() {
+            document.getElementById('sevk-edit-g3').value = sevkKodlari.g3;
+            document.getElementById('sevk-edit-tt').value = sevkKodlari.tt;
+            document.getElementById('sevk-edit-btn').hidden = true;
+            document.getElementById('sevk-edit-form').hidden = false;
+            document.getElementById(sevkAcikTur === 'tt' ? 'sevk-edit-tt' : 'sevk-edit-g3').focus();
+        }
+
+        function closeSevkEditForm() {
+            document.getElementById('sevk-edit-form').hidden = true;
+            document.getElementById('sevk-edit-btn').hidden = false;
+        }
+
+        function sevkKaydet(yeni) {
+            try {
+                localStorage.setItem(SEVK_ANAHTARI, JSON.stringify(yeni));
+            } catch (e) {
+                showNotification('Sevk barkodları kaydedilirken bir hata oluştu.', 'error');
+                return false;
+            }
+            sevkKodlari = yeni;
+            sevkBarkodlariniCiz();
+            closeSevkEditForm();
+            document.getElementById('sevk-edit-btn').focus();
+            return true;
+        }
+
+        function saveSevkCodes() {
+            const yeni = {};
+            for (const tur of ['g3', 'tt']) {
+                const kutu = document.getElementById(`sevk-edit-${tur}`);
+                const deger = kutu.value.trim();
+                const hata = !deger ? 'Sevk barkodu boş bırakılamaz.'
+                    : deger.length > SEVK_EN_COK ? `Sevk barkodu en fazla ${SEVK_EN_COK} karakter olabilir.`
+                    : !barkodaCevrilir(deger) ? BARKOD_UYARISI : null;
+                if (hata) { showNotification(hata, 'error'); kutu.focus(); return; }
+                yeni[tur] = deger;
+            }
+            if (sevkKaydet(yeni)) showNotification('Sevk barkodları kaydedildi!');
+        }
+
+        function resetSevkCodes() {
+            if (!confirm(`Sevk barkodları varsayılana dönsün mü?\n\nG3: ${VARSAYILAN_SEVK.g3}\nTT: ${VARSAYILAN_SEVK.tt}`)) return;
+            if (sevkKaydet(Object.assign({}, VARSAYILAN_SEVK))) showNotification('Varsayılan sevk barkodları geri yüklendi.');
+        }
+
+        // RF Edit Fonksiyonları
+        function openEditModal() {
+            const editUserSelect = document.getElementById('edit-user-select');
+            editUserSelect.innerHTML = '<option value="">-- Kullanıcı Seçin --</option>';
+            const rf = allCodeRanges.rf;
+            const siradaki = { g3: 0, tt: 0 };
+            Object.keys(rf).sort().forEach(id => {
+                const option = document.createElement('option');
+                option.value = id;
+                siradaki[rf[id].location]++;
+                option.textContent = `${rf[id].location.toUpperCase()} ${siradaki[rf[id].location]} — ${rf[id].ad}`;
+                editUserSelect.appendChild(option);
+            });
+            populateEditForm();
+            editOverlay.style.display = 'flex';
+        }
+        function populateEditForm() {
+            const secilen = allCodeRanges.rf[document.getElementById('edit-user-select').value];
+            document.getElementById('edit-username').value = secilen ? secilen.ad : '';
+            document.getElementById('edit-password').value = secilen ? secilen.password : '';
+        }
+        function saveCredentials() {
+            const id = document.getElementById('edit-user-select').value;
+            const yeniAd = document.getElementById('edit-username').value.trim();
+            const yeniSifre = document.getElementById('edit-password').value.trim();
+            const rf = allCodeRanges.rf;
+
+            if (!id) { showNotification('Lütfen düzenlemek için bir kullanıcı seçin.', 'error'); return; }
+            if (!yeniAd || !yeniSifre) { showNotification('Kullanıcı adı ve şifre alanları boş bırakılamaz.', 'error'); return; }
+            if (!barkodaCevrilir(yeniAd) || !barkodaCevrilir(yeniSifre)) { showNotification(BARKOD_UYARISI, 'error'); return; }
+            // 0000 başlangıç değeridir, birden çok yuvada bulunabilir.
+            if (yeniAd !== '0000' && Object.keys(rf).some(k => k !== id && rf[k].ad === yeniAd)) { showNotification('Bu kullanıcı adı zaten mevcut.', 'error'); return; }
+
+            const guncel = Object.assign({}, rf, { [id]: Object.assign({}, rf[id], { ad: yeniAd, password: yeniSifre }) });
+            try {
+                localStorage.setItem(RF_ANAHTARI, JSON.stringify(guncel));
+                allCodeRanges.rf = guncel;
+                showNotification('Bilgiler başarıyla kaydedildi!');
+                closeEditModal();
+            }
+            catch (e) { showNotification('Ayarlar kaydedilirken bir hata oluştu.', 'error'); }
+        }
+
+        // Lokasyon Edit Fonksiyonları
+        function openLocationEditModal(locationType) {
+            editingLocationType = locationType;
+            document.getElementById('location-edit-title').textContent = `${locationType.toUpperCase()} Lokasyonlarını Düzenle`;
+            populateLocationEditor();
+            resetLocationForm();
+            locationEditOverlay.style.display = 'flex';
+        }
+
+        function resetLocationForm() {
+            locationEditOriginalName.value = '';
+            locationEditNameInput.value = '';
+            locationEditPrefixInput.value = '';
+            locationEditStartInput.value = '';
+            locationEditEndInput.value = '';
+            locationDeleteBtn.style.display = 'none';
+            locationFormTitle.textContent = 'Yeni Aralık Ekle';
+            const selected = locationRangeList.querySelector('.selected');
+            if (selected) selected.classList.remove('selected');
+        }
+
+        function populateLocationEditor() {
+            locationRangeList.innerHTML = '';
+            const ranges = allCodeRanges[editingLocationType];
+            Object.keys(ranges).sort((a,b) => a.localeCompare(b)).forEach(key => {
+                const item = document.createElement('div');
+                item.className = 'location-range-item';
+                item.textContent = ranges[key].name;
+                item.dataset.key = key;
+                item.addEventListener('click', () => selectLocationRangeForEdit(key));
+                locationRangeList.appendChild(item);
+            });
+        }
+
+        function selectLocationRangeForEdit(key) {
+            const range = allCodeRanges[editingLocationType][key];
+            if (!range) return;
+
+            locationRangeList.querySelectorAll('.location-range-item').forEach(item => item.classList.toggle('selected', item.dataset.key === key));
+
+            locationEditOriginalName.value = key;
+            locationEditNameInput.value = range.name;
+            locationEditPrefixInput.value = range.prefix;
+            locationEditStartInput.value = range.start;
+            locationEditEndInput.value = range.end;
+            locationDeleteBtn.style.display = 'block';
+            locationFormTitle.textContent = 'Aralığı Düzenle';
+        }
+
+        function saveLocationRange() {
+            const originalKey = locationEditOriginalName.value;
+            const name = locationEditNameInput.value.trim();
+            const prefix = locationEditPrefixInput.value.trim();
+            const start = parseInt(locationEditStartInput.value);
+            const end = parseInt(locationEditEndInput.value);
+
+            if (!name || !prefix || isNaN(start) || isNaN(end)) {
+                showNotification('Lütfen tüm alanları doğru bir şekilde doldurun.', 'error');
+                return;
+            }
+            if (start < 0) {
+                showNotification('Başlangıç numarası negatif olamaz.', 'error');
+                return;
+            }
+            if (start > end) {
+                showNotification('Başlangıç değeri, bitiş değerinden büyük olamaz.', 'error');
+                return;
+            }
+            if (end - start + 1 > AZAMI_BARKOD) {
+                showNotification(`Bir aralıkta en fazla ${AZAMI_BARKOD} barkod olabilir.`, 'error');
+                return;
+            }
+            if (!barkodaCevrilir(prefix)) {
+                showNotification(BARKOD_UYARISI, 'error');
+                return;
+            }
+            if (originalKey !== name && allCodeRanges[editingLocationType][name]) {
+                showNotification('Bu buton adı zaten mevcut. Lütfen benzersiz bir ad seçin.', 'error');
+                return;
+            }
+
+            // === YENİ: KAYDETMEDEN ÖNCE ONAY İSTE ===
+            if (confirm(`'${name}' aralığı için yaptığınız değişiklikleri kaydetmek istediğinizden emin misiniz?`)) {
+                if (originalKey && originalKey !== name) {
+                    delete allCodeRanges[editingLocationType][originalKey];
+                }
+
+                allCodeRanges[editingLocationType][name] = { name, prefix, start, end };
+
+                saveAllRangesToStorage();
+                showNotification('Lokasyon aralığı başarıyla kaydedildi!'); // alert yerine modern bildirim
+
+                populateLocationEditor();
+                resetLocationForm();
+                renderLocationButtons(editingLocationType);
+                clearAll();
+            }
+        }
+
+        function deleteLocationRange() {
+            const keyToDelete = locationEditOriginalName.value;
+            if (!keyToDelete) { showNotification('Silmek için bir aralık seçmelisiniz.', 'error'); return; }
+            if (confirm(`'${keyToDelete}' aralığını silmek istediğinizden emin misiniz?`)) {
+                delete allCodeRanges[editingLocationType][keyToDelete];
+                saveAllRangesToStorage();
+                showNotification('Aralık başarıyla silindi.'); // alert yerine modern bildirim
+                populateLocationEditor();
+                resetLocationForm();
+                renderLocationButtons(editingLocationType);
+                clearAll();
+            }
+        }
+
+        function saveAllRangesToStorage() {
+             try {
+                const rangesToSave = { g3: allCodeRanges.g3, tt: allCodeRanges.tt };
+                localStorage.setItem('locationRanges', JSON.stringify(rangesToSave));
+            } catch (e) {
+                showNotification('Lokasyon ayarları kaydedilirken bir hata oluştu.', 'error');
+            }
+        }
+
+        // Ana Sayfa ve Navigasyon
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeRfModal(); closeSevkModal(); closeEditModal(); closeLocationEditModal(); closeAddBarcodeModal();
+            }
+        });
+
+        // Aralık adı kullanıcıdan gelir: HTML olarak değil, metin olarak yazılır.
+        function aralikDugmesi(metin, renk, tiklama) {
+            const button = document.createElement('button');
+            button.className = 'range-button';
+            button.textContent = metin;
+            if (renk) { button.style.backgroundColor = renk.zemin; button.style.color = renk.yazi; }
+            button.addEventListener('click', tiklama);
+            return button;
+        }
+
+        function renderLocationButtons(locationType) {
+            const wrapper = document.getElementById(`${locationType}-button-group-wrapper`);
+            wrapper.innerHTML = '';
+            const ranges = allCodeRanges[locationType];
+
+            const sevkButton = aralikDugmesi('SEVK', { zemin: '#FA5A5A', yazi: 'white' }, () => openSevkModal(locationType));
+            const specialButtons = [sevkButton], standardButtons = [], customButtons = [];
+
+            Object.keys(ranges).forEach(key => {
+                const name = ranges[key].name;
+                let liste = customButtons, renk = { zemin: '#a0d8f0', yazi: '#000' };
+                if (name === 'GR-ZONE') { liste = specialButtons; renk = { zemin: 'orange', yazi: 'white' }; }
+                else if (name.startsWith('G3-') || name.startsWith('TT-')) { liste = standardButtons; renk = null; }
+                const button = aralikDugmesi(name, renk, (event) => showRange(key, event));
+                button.dataset.rangeKey = key;
+                liste.push(button);
+            });
+
+            standardButtons.sort((a, b) => a.textContent.localeCompare(b.textContent, undefined, {numeric: true}));
+            customButtons.sort((a, b) => a.textContent.localeCompare(b.textContent));
+
+            [specialButtons, standardButtons, customButtons].forEach((grup, i) => {
+                if (i === 2 && grup.length === 0) return;
+                const groupEl = document.createElement('div');
+                groupEl.className = 'button-group';
+                grup.forEach(button => groupEl.appendChild(button));
+                wrapper.appendChild(groupEl);
+            });
+        }
+
+        function showLocation(locationName) {
+            activeLocation = locationName;
+            selectionScreen.style.display = 'none';
+            g3Container.style.display = 'none';
+            ttContainer.style.display = 'none';
+            renderLocationButtons(locationName);
+            if (locationName === 'g3') g3Container.style.display = 'block';
+            else if (locationName === 'tt') ttContainer.style.display = 'block';
+            rfFab.classList.remove('show');
+            clearAll();
+            updateMainScreenButtons();
+            window.scrollTo({ top: 0, behavior: "auto" });
+        }
+
+        function goBackToMenu() {
+            activeLocation = null;
+            g3Container.style.display = 'none';
+            ttContainer.style.display = 'none';
+            selectionScreen.style.display = 'block';
+            rfFab.classList.remove('show');
+            rangeNavContainer.classList.remove('show');
+            updateMainScreenButtons();
+        }
+
+        function showRange(rangeKey, event) {
+            const range = allCodeRanges[activeLocation][rangeKey];
+            if (!range) { console.error("Aralık bulunamadı:", rangeKey); return; };
+            currentRangeName = rangeKey;
+            const container = document.getElementById(`${activeLocation}Container`);
+            if(event) { targetScrollInfo = null; }
+
+            container.querySelectorAll('.range-button').forEach(btn => btn.classList.toggle('active', btn.dataset.rangeKey === rangeKey));
+
+            generateBarcodes(range);
+            const count = (range.prefix === "GR-ZONE") ? 1 : (range.end - range.start + 1);
+            container.querySelector('.info').textContent = `${range.name} - Toplam ${count} adet barkod`;
+        }
+
+        function generateBarcodes(range) {
+            const grid = document.getElementById(`${activeLocation}BarcodeGrid`);
+            grid.innerHTML = '';
+            if (range.prefix === "GR-ZONE") {
+                grid.appendChild(createBarcodeItem("GR-ZONE"));
+            } else {
+                for (let i = range.start; i <= range.end; i++) {
+                    const numberString = String(i).padStart(2, '0');
+                    const code = `${range.prefix}${numberString}`;
+                    grid.appendChild(createBarcodeItem(code));
+                }
+            }
+            for (let j = 0; j < 4; j++) {
+                const emptyItem = document.createElement('div');
+                emptyItem.className = 'barcode-item';
+                emptyItem.style.pointerEvents = 'none';
+                grid.appendChild(emptyItem);
+            }
+            if (targetScrollInfo && targetScrollInfo.code) {
+                const targetEl = grid.querySelector(`[data-code="${targetScrollInfo.code}"]`);
+                if (targetEl) {
+                    const elementRect = targetEl.getBoundingClientRect();
+                    const absoluteElementTop = elementRect.top + window.scrollY;
+                    const targetY = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+                    window.scrollTo({ top: targetY, behavior: 'auto' });
+                }
+                targetScrollInfo = null;
+            }
+            setTimeout(updateFocus, 50);
+        }
+
+        function clearAll() {
+            if (!activeLocation) return;
+            const container = document.getElementById(`${activeLocation}Container`);
+            container.querySelector('.barcode-grid').innerHTML = '';
+            container.querySelector('.info').textContent = 'Bir kod aralığı seçin';
+            container.querySelectorAll('.range-button').forEach(btn => btn.classList.remove('active'));
+            currentRangeName = null;
+            rangeNavContainer.classList.remove('show');
+            resetLocationForm();
+        }
+
+        // Scroll ve Navigasyon Fonksiyonları
+        const throttle = (func, limit) => { let inThrottle; return function() { const args = arguments, context = this; if (!inThrottle) { func.apply(context, args); inThrottle = true; setTimeout(() => inThrottle = false, limit); } } }
+
+        function updateFocus() {
+            if (!activeLocation || !currentRangeName) return;
+            const grid = document.getElementById(`${activeLocation}BarcodeGrid`);
+            const barcodeItems = grid.querySelectorAll('.barcode-item[data-code]');
+            if (barcodeItems.length === 0) return;
+            const viewportCenterY = window.innerHeight / 2;
+            let closestElement = null;
+            let minDistance = Infinity;
+            barcodeItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const elementCenterY = rect.top + rect.height / 2;
+                const distance = Math.abs(viewportCenterY - elementCenterY);
+                if (distance < minDistance) { minDistance = distance; closestElement = item; }
+            });
+            barcodeItems.forEach(item => item.classList.remove('barcode-item-focused'));
+            if (closestElement) { closestElement.classList.add('barcode-item-focused'); }
+        }
+        
+        function navigateRange(direction) {
+            if (!activeLocation || !currentRangeName) return;
+
+            const buttonWrapper = document.getElementById(`${activeLocation}-button-group-wrapper`);
+            const rangeButtons = Array.from(buttonWrapper.querySelectorAll('.range-button[data-range-key]')); // SEVK aralık değildir, bu özniteliği yok
+            if (rangeButtons.length <= 1) return;
+
+            const currentIndex = rangeButtons.findIndex(btn => btn.classList.contains('active'));
+            if (currentIndex === -1) return;
+
+            let nextIndex = currentIndex + direction;
+
+            if (nextIndex >= rangeButtons.length) {
+                nextIndex = 0; // Sona gelince başa dön
+            } else if (nextIndex < 0) {
+                nextIndex = rangeButtons.length - 1; // Baştayken sona git
+            }
+
+            rangeButtons[nextIndex].click();
+        }
+
+
+        const toggleVisibility = () => {
+            clearTimeout(scrollEndTimer);
+            rangeNavContainer.classList.remove('show');
+            const shouldShow = window.scrollY > 300;
+            scrollButtonsContainer.classList.toggle("show", shouldShow);
+            rfFab.classList.toggle("show", activeLocation && shouldShow);
+            updateMainScreenButtons();
+            scrollEndTimer = setTimeout(() => {
+                if (activeLocation && currentRangeName && window.scrollY > 300) {
+                    rangeNavContainer.classList.add('show');
+                }
+            }, 250);
+        };
+        window.addEventListener("scroll", toggleVisibility);
+        window.addEventListener('scroll', throttle(updateFocus, 15));
+        window.addEventListener('resize', updateFocus);
+
+        function showCreateBarcodeView() {
+            document.getElementById('add-barcode-form-container').style.display = 'block';
+            document.getElementById('add-barcode-actions-container').style.display = 'flex';
+            document.getElementById('saved-barcodes-list-container').style.display = 'none';
+            document.getElementById('toggle-saved-barcodes-btn').style.display = 'inline';
+            document.getElementById('toggle-create-new-btn').style.display = 'none';
+            document.getElementById('add-barcode-value').value = '';
+            previewCustomBarcode('');
+        }
+
+        function showSavedBarcodesView() {
+            document.getElementById('add-barcode-form-container').style.display = 'none';
+            document.getElementById('add-barcode-actions-container').style.display = 'none';
+            document.getElementById('saved-barcodes-list-container').style.display = 'block';
+            document.getElementById('toggle-saved-barcodes-btn').style.display = 'none';
+            document.getElementById('toggle-create-new-btn').style.display = 'inline';
+
+            const listEl = document.getElementById('saved-barcodes-list');
+            listEl.innerHTML = '';
+            const savedBarcodes = kayitliBarkodlar();
+
+            if (savedBarcodes.length === 0) {
+                listEl.innerHTML = '<p style="text-align:center; color: #666; padding: 20px;">Kaydedilmiş barkod bulunmuyor.</p>';
+                previewCustomBarcode('');
+                return;
+            }
+            savedBarcodes.forEach(barcodeValue => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'saved-barcode-item';
+                const valueEl = document.createElement('span');
+                valueEl.textContent = barcodeValue;
+                const deleteEl = document.createElement('span');
+                deleteEl.className = 'saved-barcode-item-delete';
+                deleteEl.textContent = '×';
+                deleteEl.addEventListener('click', (event) => deleteSavedBarcode(barcodeValue, event));
+                itemEl.appendChild(valueEl);
+                itemEl.appendChild(deleteEl);
+                itemEl.addEventListener('click', () => previewCustomBarcode(barcodeValue));
+                listEl.appendChild(itemEl);
+            });
+            if (savedBarcodes.length > 0) {
+               previewCustomBarcode(savedBarcodes[0]);
+            }
+        }
+
+        function previewCustomBarcode(value) {
+            const previewArea = document.getElementById('add-barcode-preview-area');
+            previewArea.innerHTML = '';
+            if (!value) return;
+
+            const barcodeItem = createBarcodeItem(value);
+            barcodeItem.classList.add('barcode-item-focused');
+            previewArea.appendChild(barcodeItem);
+        }
+
+        // Eski kayıt biçimi { value } de okunur. Bozuk veya yanlış türdeki kayıt boş liste sayılır.
+        function kayitliBarkodlar() {
+            const kayit = kayitOku('sabit_barkodlar');
+            if (!Array.isArray(kayit)) return [];
+            return kayit.map(b => (nesneMi(b) ? b.value : b)).filter(doluMetin);
+        }
+
+        function saveCustomBarcode() {
+            const value = document.getElementById('add-barcode-value').value.trim();
+            if(!value) { showNotification("Kaydetmek için bir barkod değeri girmelisiniz.", 'error'); return; }
+            if (!barkodaCevrilir(value)) { showNotification(BARKOD_UYARISI, 'error'); return; }
+
+            const savedBarcodes = kayitliBarkodlar();
+
+            if (savedBarcodes.includes(value)) {
+                showNotification("Bu barkod değeri zaten kayıtlı.", 'error');
+                return;
+            }
+
+            savedBarcodes.push(value);
+            localStorage.setItem('sabit_barkodlar', JSON.stringify(savedBarcodes));
+            showNotification(`'${value}' başarıyla kaydedildi!`);
+            document.getElementById('add-barcode-value').value = '';
+            previewCustomBarcode('');
+        }
+
+        function deleteSavedBarcode(valueToDelete, event) {
+            event.stopPropagation();
+            if (!confirm(`'${valueToDelete}' barkodunu silmek istediğinizden emin misiniz?`)) return;
+
+            const savedBarcodes = kayitliBarkodlar().filter(b => b !== valueToDelete);
+            localStorage.setItem('sabit_barkodlar', JSON.stringify(savedBarcodes));
+            showSavedBarcodesView();
+        }
+
+        function createBarcodeItem(code) {
+            const barcodeItem = document.createElement('div');
+            barcodeItem.className = 'barcode-item';
+            barcodeItem.dataset.code = code;
+            const title = document.createElement('h3');
+            title.textContent = code;
+            const contentWrapper = document.createElement('div');
+            contentWrapper.className = 'content-wrapper';
+            contentWrapper.appendChild(title);
+            barkodCiz(contentWrapper, code, { width: 2, height: 60, margin: 10 });
+            barcodeItem.appendChild(contentWrapper);
+            return barcodeItem;
+        }
+    </script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .catch(registrationError => {
+                        console.warn('SW kaydı başarısız:', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

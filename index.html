@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Depo</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="G3 png.png" sizes="180x180">
+  <meta name="theme-color" content="#007bff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Depo">
+  <meta name="description" content="Depo Yönetim Sistemi">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #007bff;
+      --blue-dark: #0056b3;
+      --blue-light: #3395ff;
+      --teal: #0d6efd;
+      --navy: #0c1e36;
+      --white: #ffffff;
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.25);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    html, body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Yükseklik sabitlenmez: yan çevrilen telefonda içerik sığmazsa sayfa kayar. */
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0c1e36 0%, #0a3d7a 40%, #1565c0 70%, #0d47a1 100%);
+      position: relative;
+      padding: 24px 20px;
+    }
+
+    /* Animated background blobs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.25;
+      animation: drift 12s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    body::before {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #3395ff, transparent);
+      top: -150px;
+      right: -100px;
+    }
+    body::after {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #007bff, transparent);
+      bottom: -100px;
+      left: -100px;
+      animation-delay: -6s;
+    }
+
+    @keyframes drift {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, 20px) scale(1.1); }
+    }
+
+    /* Grid overlay texture */
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .launcher {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+
+    .logo-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      overflow: hidden;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .app-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      text-align: center;
+      line-height: 1.1;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      animation: fadeDown 0.6s 0.1s ease both;
+    }
+
+    .app-subtitle {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.65);
+      text-align: center;
+      letter-spacing: 0.5px;
+      animation: fadeDown 0.6s 0.15s ease both;
+    }
+
+    /* Cards */
+    .cards {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      width: 100%;
+      background: var(--glass-bg);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.22s ease,
+                  background 0.22s ease,
+                  border-color 0.22s ease;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      border-radius: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: var(--card-shadow);
+    }
+
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+
+    .card--adres .card-icon {
+      background: linear-gradient(135deg, #0078f0, #005bb5);
+    }
+
+    .card--kontrol .card-icon {
+      background: linear-gradient(135deg, #1565c0, #0d3b8a);
+    }
+
+    .card-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    .card-desc {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.4;
+    }
+
+    .card-arrow {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .card-arrow svg {
+      width: 14px;
+      height: 14px;
+      stroke: rgba(255,255,255,0.8);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card:hover .card-arrow {
+      background: rgba(255,255,255,0.22);
+      transform: translateX(3px);
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card:nth-child(1) { animation: fadeUp 0.5s 0.25s ease both; }
+    .card:nth-child(2) { animation: fadeUp 0.5s 0.35s ease both; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 36px;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.3);
+      text-align: center;
+      letter-spacing: 0.3px;
+      animation: fadeDown 0.6s 0.5s ease both;
+    }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 4px;
+    }
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+    .divider-text {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* Gizlilik ve Güvenlik düğmesi */
+    .privacy-btn {
+      margin-top: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      animation: fadeUp 0.5s 0.45s ease both;
+    }
+    .privacy-btn:hover {
+      background: rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    .privacy-btn:focus-visible,
+    .privacy-close:focus-visible,
+    .privacy-ok:focus-visible {
+      outline: 3px solid #86b7fe;
+      outline-offset: 2px;
+    }
+    .privacy-btn svg { flex-shrink: 0; }
+
+    /* Gizlilik penceresi */
+    .privacy-dialog {
+      width: min(560px, calc(100% - 32px));
+      max-height: calc(100dvh - 32px);
+      margin: auto;
+      border: none;
+      border-radius: 20px;
+      background: #ffffff;
+      color: #1f2937;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+    }
+    .privacy-dialog[open] {
+      display: flex;
+      flex-direction: column;
+      animation: dialogIn 0.2s ease both;
+    }
+    .privacy-dialog::backdrop {
+      background: rgba(8, 18, 36, 0.7);
+    }
+    @keyframes dialogIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .privacy-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 10px 12px 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .privacy-head svg { flex-shrink: 0; color: #0a58ca; }
+    .privacy-head h2 {
+      flex: 1;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #0c1e36;
+    }
+    .privacy-close {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 12px;
+      background: transparent;
+      color: #4b5563;
+      cursor: pointer;
+    }
+    .privacy-close:hover { background: #f3f4f6; }
+    .privacy-body {
+      padding: 16px 20px 8px;
+      overflow-y: auto;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: #374151;
+    }
+    .privacy-lead {
+      padding: 12px 14px;
+      border-left: 4px solid #0a58ca;
+      border-radius: 8px;
+      background: #eef5ff;
+      color: #0c1e36;
+      font-weight: 600;
+    }
+    .privacy-body h3 {
+      margin: 16px 0 4px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0c1e36;
+    }
+    .privacy-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 20px 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+    .privacy-date {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .privacy-ok {
+      min-height: 44px;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 12px;
+      background: #0a58ca;
+      color: #ffffff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .privacy-ok:hover { background: #084298; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .privacy-btn, .privacy-dialog[open] { animation: none; }
+      .privacy-btn { transition: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 360px) {
+      .app-title { font-size: 1.7rem; }
+      .card { padding: 22px 18px; }
+      .card-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+    }
+
+    @media (min-width: 600px) {
+      body { padding: 40px 24px; }
+      .launcher { max-width: 460px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <main class="launcher" role="main">
+    <!-- Logo & Başlık -->
+    <header class="header">
+      <div class="logo-wrap">
+        <img src="G3 png.png" alt="Depo logosu">
+      </div>
+      <h1 class="app-title">Depo</h1>
+      <p class="app-subtitle">Sistem seçin</p>
+    </header>
+
+    <!-- Kart Listesi -->
+    <nav class="cards" aria-label="Sistem seçimi">
+
+      <a id="btn-adres" class="card card--adres" href="./Adres Sistemi/index.html" role="button"
+         aria-label="Adres Sistemini aç">
+        <div class="card-icon" aria-hidden="true">📍</div>
+        <div class="card-body">
+          <div class="card-title">Adres Sistemi</div>
+          <div class="card-desc">Lokasyon, RF bilgisi ve barkod yönetimi</div>
+        </div>
+        <div class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </a>
+
+      <a id="btn-kontrol" class="card card--kontrol" href="./Kontrol Sistemi/index.html" role="button"
+         aria-label="Kontrol Sistemini aç">
+        <div class="card-icon" aria-hidden="true">📦</div>
+        <div class="card-body">
+          <div class="card-title">Kontrol Sistemi</div>
+          <div class="card-desc">Sevkiyat kontrolü ve barkod okuma</div>
+        </div>
+        <div class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </a>
+
+    </nav>
+
+    <button type="button" id="btn-gizlilik" class="privacy-btn" aria-haspopup="dialog" aria-controls="gizlilikPenceresi">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Gizlilik ve Güvenlik
+    </button>
+
+    <footer class="footer">
+      <p>Depo &copy; 2025</p>
+    </footer>
+  </main>
+
+  <dialog id="gizlilikPenceresi" class="privacy-dialog" aria-labelledby="gizlilikBaslik">
+    <div class="privacy-head">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <h2 id="gizlilikBaslik">Gizlilik ve Güvenlik</h2>
+      <button type="button" class="privacy-close" data-kapat aria-label="Kapat" title="Kapat">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="privacy-body">
+      <p class="privacy-lead">Kısaca: Bu site hiçbir veri toplamaz ve hiçbir yere göndermez. Girdiğiniz her şey yalnız sizin telefonunuzda kalır.</p>
+
+      <h3>Bilgileriniz nerede saklanır?</h3>
+      <p>RF kullanıcı adları ve şifreleri, eklediğiniz lokasyon ve barkodlar, yüklediğiniz Excel listeleri ve okuttuğunuz barkodlar yalnız bu telefonun tarayıcı hafızasında saklanır. Bu bilgiler hiçbir sunucuya gönderilmez; site sahibi dahil kimse uzaktan göremez. İndirdiğiniz Excel dosyaları telefonunuza kaydedilir.</p>
+
+      <h3>Veri toplanmaz</h3>
+      <p>Sitede üyelik, reklam, çerez, ziyaretçi sayacı veya izleme aracı yoktur. Sitenin kodunda bilgi gönderen hiçbir bölüm yoktur; site verilerinizi hiçbir şekilde dışarı çekemez.</p>
+
+      <h3>Kamera</h3>
+      <p>Kamera yalnız siz açtığınızda, barkod okumak için kullanılır. Görüntü telefonda işlenir; kaydedilmez ve hiçbir yere gönderilmez.</p>
+
+      <h3>İnternet bağlantısı ne için kullanılır?</h3>
+      <p>Site açılırken telefonunuz yalnız sitenin kendi dosyalarını (GitHub Pages) ve yazı tipini (Google Fonts) indirir. Her web sitesinde olduğu gibi bu sunucular bağlantının teknik bilgilerini (örneğin IP adresi) görebilir; ama girdiğiniz hiçbir bilgi bu isteklere eklenmez.</p>
+
+      <h3>Tarayıcı verileri silinirse kayıtlar da silinir</h3>
+      <p>Kayıtlar yalnız bu telefonda ve bu tarayıcıda durur; başka bir cihaza geçmez. Tarayıcı geçmişini veya site verilerini temizlerseniz ya da gizli sekmeyi kapatırsanız şifreler, barkodlar ve sayımlar kalıcı olarak silinir ve geri getirilemez. Uygulamayı kaldırırken site verileri de silinebilir. Önemli sayımları Excel olarak indirin.</p>
+
+      <h3>Telefonunuzu koruyun</h3>
+      <p>Şifreler telefonda şifrelenmeden saklanır ve RF ekranında açık görünür. Telefonunuzu kullanan biri bunları görebilir; ekran kilidi kullanın.</p>
+
+      <h3>Sorumluluk</h3>
+      <p>Siteyi indirip kodunu, şifreleri veya başka ayarları değiştiren herkes yaptığı değişiklikten ve sonuçlarından kendisi sorumludur.</p>
+    </div>
+    <div class="privacy-foot">
+      <span class="privacy-date">Son güncelleme: 7 Kasım 2026</span>
+      <button type="button" class="privacy-ok" data-kapat>Anladım</button>
+    </div>
+  </dialog>
+
+  <script>
+    // Gizlilik penceresi: <dialog> Esc ile kapanır; kapanınca odak açan düğmeye döner.
+    (() => {
+      const dugme = document.getElementById('btn-gizlilik');
+      const pencere = document.getElementById('gizlilikPenceresi');
+      const kapat = () => {
+        if (typeof pencere.close === 'function') { if (pencere.open) pencere.close(); return; }
+        pencere.removeAttribute('open'); // <dialog> desteklemeyen eski tarayıcı
+        dugme.focus();
+      };
+      dugme.addEventListener('click', () => {
+        if (typeof pencere.showModal === 'function') pencere.showModal();
+        else pencere.setAttribute('open', '');
+      });
+      pencere.querySelectorAll('[data-kapat]').forEach((b) => b.addEventListener('click', kapat));
+      // Pencere kenara kadar içerikle dolu: dialog'un kendisine gelen tıklama arka plana yapılmıştır.
+      pencere.addEventListener('click', (e) => { if (e.target === pencere) kapat(); });
+      pencere.addEventListener('close', () => dugme.focus());
+    })();
+
+    // Üç sistem de buradan hazırlanır: hiç açılmamış sistem de çevrimdışı açılabilsin.
+    // Sayfa yüklendikten sonra çalışır; kayıt başarısız olursa sayfa yine kullanılır.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        ['./sw.js', './Adres Sistemi/sw.js', './Kontrol Sistemi/sw.js'].forEach((betik) => {
+          navigator.serviceWorker.register(betik).catch(() => {});
+        });
+      });
+    }
+  </script>
+</body>
+</html>

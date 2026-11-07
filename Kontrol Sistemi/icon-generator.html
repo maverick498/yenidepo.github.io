@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İkon Oluşturucu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #1976d2; }
+        .icon-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .icon-box {
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #1976d2;
+            border-radius: 20%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #1565c0; }
+        .instructions {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📦 Depo Kontrol - İkon Oluşturucu</h1>
+    
+    <div class="icon-container">
+        <div class="icon-box">
+            <h3>192x192</h3>
+            <canvas id="icon192" width="192" height="192"></canvas>
+            <br>
+            <button onclick="downloadIcon('icon192', 'icon-192.png')">İndir (192x192)</button>
+        </div>
+        
+        <div class="icon-box">
+            <h3>512x512</h3>
+            <canvas id="icon512" width="512" height="512"></canvas>
+            <br>
+            <button onclick="downloadIcon('icon512', 'icon-512.png')">İndir (512x512)</button>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <h3>📋 Talimatlar</h3>
+        <ol>
+            <li>Yukarıdaki ikonları indirin</li>
+            <li>İkon dosyalarını proje klasörüne kaydedin</li>
+            <li>Alternatif olarak kendi tasarımınızı kullanabilirsiniz</li>
+            <li>Önerilen araçlar:
+                <ul>
+                    <li><a href="https://favicon.io/" target="_blank">Favicon.io</a></li>
+                    <li><a href="https://www.canva.com/" target="_blank">Canva</a></li>
+                    <li><a href="https://www.figma.com/" target="_blank">Figma</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        function drawIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Gradient arka plan
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#1976d2');
+            gradient.addColorStop(1, '#1565c0');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Beyaz kutu simgesi (palet/paket)
+            const boxSize = size * 0.5;
+            const boxX = (size - boxSize) / 2;
+            const boxY = (size - boxSize) / 2;
+            
+            ctx.fillStyle = 'white';
+            ctx.fillRect(boxX, boxY, boxSize, boxSize);
+            
+            // Kutu çizgileri
+            ctx.strokeStyle = '#1976d2';
+            ctx.lineWidth = size * 0.02;
+            ctx.strokeRect(boxX, boxY, boxSize, boxSize);
+            
+            // Çapraz çizgiler (palet görünümü)
+            ctx.beginPath();
+            ctx.moveTo(boxX, boxY + boxSize/2);
+            ctx.lineTo(boxX + boxSize, boxY + boxSize/2);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(boxX + boxSize/2, boxY);
+            ctx.lineTo(boxX + boxSize/2, boxY + boxSize);
+            ctx.stroke();
+            
+            // Barkod çizgileri
+            const barcodeY = boxY + boxSize * 0.75;
+            const barcodeHeight = boxSize * 0.15;
+            const lineWidth = size * 0.015;
+            
+            ctx.fillStyle = '#1976d2';
+            for (let i = 0; i < 8; i++) {
+                const x = boxX + boxSize * 0.15 + (i * boxSize * 0.09);
+                const width = (i % 2 === 0) ? lineWidth : lineWidth * 2;
+                ctx.fillRect(x, barcodeY, width, barcodeHeight);
+            }
+        }
+        
+        function downloadIcon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const url = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = url;
+            link.click();
+        }
+        
+        // İkonları çiz
+        drawIcon('icon192', 192);
+        drawIcon('icon512', 512);
+    </script>
+</body>
+</html>

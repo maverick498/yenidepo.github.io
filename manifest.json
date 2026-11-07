@@ -1,0 +1,22 @@
+{
+  "id": "/",
+  "name": "Depo",
+  "short_name": "Depo",
+  "description": "Depo lokasyonları, RF bilgileri ve barkod yönetim uygulaması",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "G3 png.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "tr"
+}
